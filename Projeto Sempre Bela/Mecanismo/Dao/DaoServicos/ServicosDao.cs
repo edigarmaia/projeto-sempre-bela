@@ -148,6 +148,94 @@ namespace Mecanismo.Dao.DaoServicos
         //    return resultado;
         //}
 
+        public static bool ValidarExcluirServico(int idServico)
+        {
+            // Consulta para verificar se há agendamentos associados ao serviço
+            string consultaAgendamentos = "SELECT COUNT(*) FROM agendamento WHERE idServico = @idServico";
+
+            using (SqlConnection conexao = Conexao.GetConexao())
+            using (SqlCommand comando = new SqlCommand(consultaAgendamentos, conexao))
+            {
+                comando.Parameters.AddWithValue("@idServico", idServico);
+
+                // Obtém o número de agendamentos associados ao serviço
+                int numeroAgendamentos = (int)comando.ExecuteScalar();
+
+                // Se houver agendamentos, não permita a exclusão
+                return numeroAgendamentos == 0;
+            }
+        }
+        //public static bool ExcluirServico(string tipo)
+        //{
+        //    if (ValidarExcluirServico(int idServico))
+
+        //    {
+        //        // Comando SQL
+        //        string comandoSql = "DELETE FROM servicos WHERE tipoServico LIKE @tipo";
+
+        //        using (SqlConnection conexao = Conexao.GetConexao())
+        //        using (SqlCommand comando = new SqlCommand(comandoSql, conexao))
+        //        {
+        //            // Configuração dos parâmetros do comando SQL
+        //            SqlParameter tipoServico = new SqlParameter("@tipo", System.Data.SqlDbType.Text, 25);
+
+        //            // Atribuição dos valores aos parâmetros do comando SQL
+        //            tipoServico.Value = tipo;
+
+        //            // Adição dos parâmetros ao comando SQL
+        //            comando.Parameters.Add(tipoServico);
+
+        //            // Executa o comando de exclusão
+        //            int linhasAfetadas = comando.ExecuteNonQuery();
+
+        //            // Retorna true se a exclusão foi bem-sucedida
+        //            return linhasAfetadas > 0;
+        //        }
+        //    }else
+        //    {
+        //        // Se houver agendamentos, não permita a exclusão
+        //        return false;
+        //    }
+        //}
+
+
+        //public static bool ExcluirServico(string tipo)
+        //{
+        //    bool resultado = false;
+
+        //    try
+        //    {
+        //        // Comando SQL
+        //        string comandoSql = "DELETE FROM servicos WHERE tipoServico LIKE @tipo";
+
+        //        using (SqlConnection conexao = Conexao.GetConexao())
+        //        using (SqlCommand comando = new SqlCommand(comandoSql, conexao))
+        //        {
+        //            // Configuração dos parâmetros do comando SQL
+        //            SqlParameter tipoServico = new SqlParameter("@tipo", System.Data.SqlDbType.Text, 25);
+
+        //            // Atribuição dos valores aos parâmetros do comando SQL
+        //            tipoServico.Value = tipo;
+
+        //            // Adição dos parâmetros ao comando SQL
+        //            comando.Parameters.Add(tipoServico);
+
+        //            // Executa o comando e obtém o número de linhas afetadas
+        //            int retorno = comando.ExecuteNonQuery();
+
+        //            // Define o resultado com base no número de linhas afetadas
+        //            resultado = retorno > 0;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Tratar a exceção apropriadamente, por exemplo, registrar a exceção ou lançar novamente
+        //        throw new Exception("Erro ao excluir serviço", ex);
+        //    }
+
+        //    return resultado;
+        //}
+
         public static bool ExcluirServico(string tipo)
         {
             bool resultado = false;
@@ -184,6 +272,7 @@ namespace Mecanismo.Dao.DaoServicos
 
             return resultado;
         }
+
 
     }
 }

@@ -87,6 +87,8 @@
                         <asp:ListBox ID="lbxServicos" runat="server" Width="400px" AutoPostBack="true" OnSelectedIndexChanged="lbxServicos_SelectedIndexChanged"></asp:ListBox>
                     </p>
                     <br />
+            <p id="msgSucesso" style="color: rgb(0, 128, 0); text-align: center" visible="false" runat="server">Serviço excluído com sucesso!</p>
+            <p id="msgErro" style="color: rgb(200, 0, 0); text-align: center" visible="false" runat="server">Não é possível excluir o serviço devido a agendamentos associados!</p>
                     <div class="form-group">
                         <label for="">Nome Serviço</label>
                         <asp:TextBox type="text" class="form-control form-control-sm" ID="txtNomeServico" runat="server"></asp:TextBox>

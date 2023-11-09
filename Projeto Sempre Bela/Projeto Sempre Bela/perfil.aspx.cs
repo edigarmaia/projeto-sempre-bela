@@ -144,9 +144,24 @@ namespace SempreBela
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
             string tipo = txtNomeServico.Text;
-            ServicosDao.ExcluirServico(tipo);
-            AtualizarListBox();
-            limparDados();
+
+            // Tenta excluir o serviço
+            bool exclusaoBemSucedida = ServicosDao.ExcluirServico(tipo);
+
+            if (exclusaoBemSucedida)
+            {
+                AtualizarListBox();
+                limparDados();
+                msgSucesso.Visible = true;
+            }
+            else
+            {
+                msgErro.Visible = true;
+
+            }
+            //ServicosDao.ExcluirServico(tipo);
+            //AtualizarListBox();
+            //limparDados();
         }
     }
 }

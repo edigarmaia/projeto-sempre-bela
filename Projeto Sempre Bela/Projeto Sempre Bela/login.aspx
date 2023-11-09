@@ -18,8 +18,8 @@
     <%--Menu--%>
     <div class="menu">
         <nav>
-<a href="index.aspx">
-    <img class="logo" src="Imagens/logo_sempre_bela.jpeg" alt="Logo Sempre Bela" /></a>
+            <a href="index.aspx">
+                <img class="logo" src="Imagens/logo_sempre_bela.jpeg" alt="Logo Sempre Bela" /></a>
             <ul class="itens-menu">
                 <li><a href="index.aspx">Home</a></li>
                 <li><a href="servicos.aspx">Serviços</a></li>
@@ -32,10 +32,7 @@
 
 
 
-    <div class="main">
-
-
-        <div class="principal" id="form">
+        <div id="form">
             <form class="px-4 py-3" runat="server">
                 <h2 class="title">Login</h2>
 
@@ -49,10 +46,13 @@
                     <asp:TextBox type="password" class="form-control form-control-sm" placeholder="Insira a senha" ID="txtSenha" runat="server"></asp:TextBox>
                 </div>
 
+               
+
                 <div id="btn">
-                    <asp:Button ID="btnLogin" runat="server" Text="Entrar" Class="btn1" Style="background-color: rgb(247, 76, 213);" OnClick="btnLogin_Click" />
+                    <asp:Button ID="btnLogin" runat="server" Text="Entrar" Class="btn1 btn-lg w-100" Style="background-color: rgb(247, 76, 213);" OnClick="btnLogin_Click" />
                 </div>
                 <br />
+
                 <p id="msgErro" style="color: rgb(200, 0, 0)" visible="false" runat="server">Usuário ou senha incorretos</p>
 
             </form>
@@ -60,14 +60,9 @@
             <!-- linkar tela -->
             <a class="item" href="cadastro.aspx">Não tem uma conta? Então cadastre-se</a>
             <br />
-            <br />
+          
           
         </div>
-
-
-    </div>
-
-
 
     <footer>
         
