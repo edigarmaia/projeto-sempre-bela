@@ -77,7 +77,7 @@
 
                 <div>
                     <p>
-                        <asp:Button ID="btnSair" runat="server" Value="Sair" Text="Sair" class="btn btn-lg btn-light" OnClick="btnSair_Click1" />
+                        <asp:Button ID="btnSair" runat="server" Value="Sair" Text="Sair" class="btn btn-outline-danger" OnClick="btnSair_Click1" />
                     </p>
                 </div>
                 <div id="sessaoManicure" visible="false" runat="server">
