@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Dao\Conexao.cs" />
     <Compile Include="Dao\DaoAgendamento\Agendamento.cs" />
     <Compile Include="Dao\DaoAgendamento\AgendamentoDao.cs" />
