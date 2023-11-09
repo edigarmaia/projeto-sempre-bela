@@ -36,8 +36,7 @@
 
     <div class="main">
         <div class="container">
-            <form runat="server">
-                <div>
+            <form runat="server">            
                     <h3>Perfil <%=(Mecanismo.Enums.TipoPerfil)(int)Session["tipo"] %> </h3>
                     <br />
                     <h6>Olá, <%=Session.Keys.Count > 0 ? Session["nome"] : "Usuário"%></h6>
@@ -45,11 +44,12 @@
                     <table class="table table-borderless">
                         <thead>
                             <tr>
-                                <th scope="col">Nome</th>
+                                <th scope="col">Nome da Manicure</th>
                                 <th scope="col">Serviço</th>
                                 <th scope="col">Data</th>
                                 <th scope="col">Hora</th>
                                 <th scope="col">Valor</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,11 +70,15 @@
                                 <%-- Utilizando CultureInfo para converter um tipo de dado a cultura de uma linguagem específica. 
                                     No caso, está convertendo o valor decimal de origem norte-americana (com .) para o padrão pt-BR (com ,) nas casas decimais --%>
                                 <td>R$ <%=agendamento.Servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"))%></td>
+                                <td><asp:Button ID="btnPagar" runat="server" Text="Pagar" class="btn btn-primary" /></td>
                             </tr>
                             <% } %>
                         </tbody>
                     </table>
                     <hr />
+
+                                <div><p><asp:Button ID="btnSair" runat="server" Value="Sair" Text="Sair" class="btn btn-lg btn-secondary" OnClick="btnSair_Click1" />
+</p>
                 </div>
                 <div id="sessaoManicure" visible="false" runat="server">
                     <h5>Serviços Oferecidos</h5>
@@ -98,7 +102,7 @@
                     <div>
                         <asp:Button ID="btnInserir" runat="server" Text="Inserir" class="btn btn-lg btn-success" OnClick="btnInserir_Click" />
                         <asp:Button ID="btnEditar" runat="server" Text="Editar" class="btn btn-lg btn-primary" OnClick="btnEditar_Click" />
-                        <asp:Button ID="btnExcluir" runat="server" Text="Excluir" class="btn btn-lg btn-danger" />
+                        <asp:Button ID="btnExcluir" runat="server" Text="Excluir" class="btn btn-lg btn-danger" OnClick="btnEditar_Click" />
 
                         <div />
                     </div>

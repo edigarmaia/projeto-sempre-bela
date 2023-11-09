@@ -40,7 +40,7 @@ namespace SempreBela
             Session["tipo"] = login.Tipo; // tipo de usuário (Cliente e Manicure)
 
             //Redirecionando para a página principal
-            Response.Redirect("index.aspx");
+            Response.Redirect("perfil.aspx");
         }
 
 

@@ -1,10 +1,12 @@
 ﻿using Mecanismo.Dao;
 using Mecanismo.Dao.DaoAgendamento;
 using Mecanismo.Dao.DaoServicos;
+using Mecanismo.Dao.DaoUsuarios;
 using Mecanismo.Enums;
 using SempreBela.Dao.DaoAgendamento;
 using System;
 using System.Collections.Generic;
+using System.Web.Security;
 using System.Web.UI.WebControls;
 
 namespace SempreBela
@@ -43,6 +45,8 @@ namespace SempreBela
                     lbxServicos.Items.Add(new ListItem(servico.TipoServico, servico.ValorServico.ToString()));
                 }
             }
+          
+          
         }
 
         protected void btnConsultar_Click(object sender, EventArgs e)
@@ -131,5 +135,21 @@ namespace SempreBela
             //limparDados();
             AtualizarListBox();
         }
+
+        private void Deslogar()
+        {
+            
+        }
+                
+
+        protected void btnSair_Click1(object sender, EventArgs e)
+        {
+            Session["IdUsuario"] = null;
+            Session["Tipo"] = null;
+            Session.Abandon();
+            Response.Redirect("index.aspx");
+
+        }
+        
     }
 }

@@ -19,15 +19,15 @@
     <%--Menu--%>
     <div class="menu">
         <nav>
-<a href="index.aspx">
-    <img class="logo" src="Imagens/logo_sempre_bela.jpeg" alt="Logo Sempre Bela" /></a>
+            <a href="index.aspx">
+                <img class="logo" src="Imagens/logo_sempre_bela.jpeg" alt="Logo Sempre Bela" /></a>
             <ul class="itens-menu">
                 <li><a href="index.aspx">Home</a></li>
                 <li><a href="servicos.aspx">Serviços</a></li>
                 <li><a href="agendamento.aspx">Agendamento</a></li>
                 <li><a href="contato.aspx">Contato</a></li>
                 <li><a href="cadastro.aspx">Cadastro</a></li>
-                 <li><a href="perfil.aspx">Meu Perfil</a></li>
+                <li><a href="perfil.aspx">Meu Perfil</a></li>
             </ul>
         </nav>
     </div>
@@ -45,26 +45,33 @@
 
                 <p>
                     Serviço: 
+                   
                     <asp:DropDownList ID="ddlServico" runat="server" Width="300px"></asp:DropDownList>
                 </p>
-
+                <%--<p>
+                    Valor: 
+   
+                    <asp:DropDownList ID="ddlValorServico" runat="server" Width="314px"></asp:DropDownList>
+                </p>--%>
                 <p>
                     Data:
-                    <asp:TextBox type="datetime-local" ID="txtDataAgendamento" runat="server" Width="495px" />
+                   
+                    <asp:TextBox type="datetime-local" ID="txtDataAgendamento" runat="server" Width="315px" />
                 </p>
                 <p>
-                    Local:<asp:TextBox ID="txtLocalAgendamento" runat="server" Width="495px" />
+                    Local:<asp:TextBox ID="txtLocalAgendamento" runat="server" Width="315px" />
                 </p>
-
-                <asp:Button ID="btnAgendar" runat="server" Text="Agendar" class="btn btn-lg <%--btn-block w-100--%>" Style="background-color: rgb(247, 76, 213);"
+                <p>
+                <asp:Button ID="btnAgendar" runat="server" Text="Agendar" class="btn btn-lg" Style="background-color: rgb(247, 76, 213);"
                     OnClick="btnAgendar_Click" />
-                <p></p>
+                </p>
 
             </div>
 
         </div>
-    </form>
 
+    </form>
+    
 
 
     <%--Rodape--%>
