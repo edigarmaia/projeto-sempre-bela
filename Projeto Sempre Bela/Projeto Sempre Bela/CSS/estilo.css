@@ -14,7 +14,7 @@
 
 .itens-menu {
     display: inline-flex;
-    float: center;
+   /* float: center;*/
     margin-top: 50px;
     /*
     margin-top: -100px;*/
@@ -126,7 +126,7 @@ footer {
         font-size: 16px;
         text-align: center;
         padding: 30px;
-        font-style: bold;
+        /*font-style: bold;*/
     }
 
 
@@ -228,12 +228,13 @@ footer {
 }
 */
 /* botão cadastre-se */
-/*
-#btn .btn1{
+/**/
+/*#btnLogin .btn1{
     font-size: 16px;
     align-items: center;
     font-weight: bold;
-}
 
-*/
+}*/
+
+/**/
 /* links finais */

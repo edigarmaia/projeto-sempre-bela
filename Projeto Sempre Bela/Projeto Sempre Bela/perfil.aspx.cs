@@ -42,30 +42,11 @@ namespace SempreBela
                 // Adicionar os itens da lista de serviços ao ListBox
                 foreach (Servico servico in servicos)
                 {
-                    lbxServicos.Items.Add(new ListItem(servico.TipoServico, servico.ValorServico.ToString()));
+                    lbxServicos.Items.Add(new ListItem(servico.TipoServico, servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"))));
                 }
             }
           
           
-        }
-
-        protected void btnConsultar_Click(object sender, EventArgs e)
-        {
-            //Servico servico = ServicosDao.listarServicos(lbxServicos.SelectedItem.ToString());
-
-            //if (servico != null)
-            //{
-            //    txtNomeServico.Text = servico.TipoServico.ToString();
-            //    txtValorServico.Text = servico.ValorServico.ToString();
-            //}
-            //Servico servico = ServicosDao.listarServicos(lbxServicos.SelectedItem.ToString());
-
-            //if (servico != null)
-            //{
-            //    txtNomeServico.Text = servico.TipoServico.ToString();
-            //    txtValorServico.Text = servico.ValorServico.ToString();
-
-            //}
         }
 
         protected void lbxServicos_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,7 +79,7 @@ namespace SempreBela
             decimal valor = Convert.ToDecimal(txtValorServico.Text);
 
             Servico servico = new Servico(nome, valor);
-
+            
             //Adicionando id da manicure responsável pela criação do serviço
             servico.IdManicure = (int)Session["idUsuario"];
 
@@ -125,23 +106,32 @@ namespace SempreBela
         protected void btnInserir_Click(object sender, EventArgs e)
         {
             ServicosDao.InserirServico(servicoForm());
-            //limparDados();
             AtualizarListBox();
+            limparDados();
         }
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            ServicosDao.EditarServico(servicoForm());
-            //limparDados();
-            AtualizarListBox();
+
+            //// Obtém o índice do item selecionado no ListBox
+            //int selectedIndex = lbxServicos.SelectedIndex;
+           
+            //if (selectedIndex >= 0)
+            //{
+            //    // Obtém o item selecionado
+            //    ListItem selectedItem = lbxServicos.Items[selectedIndex];
+
+            //    ServicosDao.EditarServico(servicoForm());
+            //}
+            ////    ServicosDao.EditarServico(servicoForm());
+            ////    //limparDados();
+            ////    AtualizarListBox();
         }
 
-        private void Deslogar()
-        {
-            
-        }
+       
                 
 
+        // Logout
         protected void btnSair_Click1(object sender, EventArgs e)
         {
             Session["IdUsuario"] = null;
@@ -150,6 +140,13 @@ namespace SempreBela
             Response.Redirect("index.aspx");
 
         }
-        
+
+        protected void btnExcluir_Click(object sender, EventArgs e)
+        {
+            string tipo = txtNomeServico.Text;
+            ServicosDao.ExcluirServico(tipo);
+            AtualizarListBox();
+            limparDados();
+        }
     }
 }

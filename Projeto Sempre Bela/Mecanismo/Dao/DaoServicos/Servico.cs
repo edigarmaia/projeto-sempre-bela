@@ -35,5 +35,9 @@ namespace Mecanismo.Dao.DaoServicos
             TipoServico = tipoServico;
             ValorServico = valorServico;
         }
+        public Servico(decimal valorServico)
+        {
+            ValorServico = valorServico;
+        }
     }
 }
