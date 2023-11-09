@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto Sempre Bela", "Projeto Sempre Bela\Projeto Sempre Bela.csproj", "{D8C64F86-54D3-4057-AFBA-52E509AFEC9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mecanismo", "Mecanismo\Mecanismo.csproj", "{F60CC2C8-984F-410C-925D-A9DD8CF69DAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D8C64F86-54D3-4057-AFBA-52E509AFEC9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8C64F86-54D3-4057-AFBA-52E509AFEC9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8C64F86-54D3-4057-AFBA-52E509AFEC9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F60CC2C8-984F-410C-925D-A9DD8CF69DAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F60CC2C8-984F-410C-925D-A9DD8CF69DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F60CC2C8-984F-410C-925D-A9DD8CF69DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F60CC2C8-984F-410C-925D-A9DD8CF69DAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
