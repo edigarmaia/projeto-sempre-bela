@@ -43,12 +43,15 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Dao\Conexao.cs" />
+    <Compile Include="Dao\DaoAgendamento\Agendamento.cs" />
+    <Compile Include="Dao\DaoAgendamento\AgendamentoDao.cs" />
     <Compile Include="Dao\DaoEnderecos\Endereco.cs" />
     <Compile Include="Dao\DaoEnderecos\EnderecoDao.cs" />
     <Compile Include="Dao\DaoServicos\Servico.cs" />
     <Compile Include="Dao\DaoServicos\ServicosDao.cs" />
     <Compile Include="Dao\DaoUsuarios\Usuario.cs" />
     <Compile Include="Dao\DaoUsuarios\UsuariosDao.cs" />
+    <Compile Include="Enums\TipoPerfil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
