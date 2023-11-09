@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Dao\Conexao.cs" />
+    <Compile Include="Dao\DaoServicos\Servico.cs" />
+    <Compile Include="Dao\DaoServicos\ServicosDao.cs" />
     <Compile Include="Dao\DaoUsuarios\Usuario.cs" />
     <Compile Include="Dao\DaoUsuarios\UsuariosDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
