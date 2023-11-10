@@ -62,10 +62,10 @@
                 </div>
 
                 <div class="form-group">
-                    <asp:TextBox type="text" class="form-control form-control-sm" ID="txtTelefone" runat="server" placeholder="Telefone" TextMode="Phone"></asp:TextBox><br />
+                    <asp:TextBox type="text" class="form-control form-control-sm" ID="txtTelefone" runat="server" placeholder="Telefone"></asp:TextBox><br />
                     <asp:RegularExpressionValidator ID="revTelefone" runat="server" ControlToValidate="txtTelefone" 
-    ErrorMessage="O telefone não é válido." Display="Dynamic" ForeColor="Red"
-    ValidationExpression="^\d{10}$"></asp:RegularExpressionValidator>
+    ErrorMessage="O telefone não é válido, digite apenas números com o DDD." Display="Dynamic" ForeColor="Red"
+    ValidationExpression="^\d{11}$"></asp:RegularExpressionValidator>
                 </div>
 
                 <div class="form-group">
@@ -88,7 +88,8 @@
             <p id="msgSucesso" style="color: rgb(0, 128, 0); text-align: center" visible="false" runat="server">Mensagem enviada com sucesso!</p>
             <p id="msgErro" style="color: rgb(200, 0, 0); text-align: center" visible="false" runat="server">Preenchimento obrigatório!</p>
 
-            <asp:Button ID="btnEnviar" type="button" class="btn btn-lg btn-block w-100" runat="server" Style="background-color: rgb(247, 76, 213);" Text="Enviar" OnClick="btnEnviar_Click" />
+            <asp:Button ID="btnEnviar" type="button" class="btn btn-lg btn-block w-100" runat="server" Style="background-color: #FF5FBF;
+;" Text="Enviar" OnClick="btnEnviar_Click" />
 
             <br />
         </form>

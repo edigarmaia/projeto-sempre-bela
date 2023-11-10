@@ -49,7 +49,7 @@
                
 
                 <div id="btn">
-                    <asp:Button ID="btnLogin" runat="server" Text="Entrar" Class="btn1 btn-lg w-100" Style="background-color: rgb(247, 76, 213);" OnClick="btnLogin_Click" />
+                    <asp:Button ID="btnLogin" runat="server" Text="Entrar" Class="btn1 btn-lg w-100" Style="background-color: #FF5FBF;" OnClick="btnLogin_Click" />
                 </div>
                 <br />
 

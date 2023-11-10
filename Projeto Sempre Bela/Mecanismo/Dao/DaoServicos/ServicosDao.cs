@@ -100,53 +100,53 @@ namespace Mecanismo.Dao.DaoServicos
         }
 
         // Metodo que edita ums serviço
-        //public static bool EditarServico(Servico servico)
-        //{
-        //    bool resultado = false;
+        public static bool EditarServico(Servico servico)
+        {
+            bool resultado = false;
 
-        //    try
-        //    {
-        //        int retorno;
-        //        //string comandoSql = "UPDATE servicos SET valorServico = @valor WHERE tipoServico LIKE @tipo";
-        //        string comandoSql = "UPDATE servicos SET tipoServico = @tipo, valorServico = @valor WHERE idServico = @id";
+            try
+            {
+                int retorno;
+                //string comandoSql = "UPDATE servicos SET valorServico = @valor WHERE tipoServico LIKE @tipo";
+                string comandoSql = "UPDATE servicos SET tipoServico = @tipo, valorServico = @valor WHERE idServico = @id";
 
-        //        //string comandoSql = "UPDATE servicos SET valorServico = @valor WHERE tipoServico = @tipo";
+                //string comandoSql = "UPDATE servicos SET valorServico = @valor WHERE tipoServico = @tipo";
 
-        //        //string comandoSql = "UPDATE servicos SET tipoServico=@tipo, valorServico=@valor WHERE idServico LIKE @id";
-        //        SqlCommand comando = new SqlCommand(comandoSql, Conexao.GetConexao());
+                //string comandoSql = "UPDATE servicos SET tipoServico=@tipo, valorServico=@valor WHERE idServico LIKE @id";
+                SqlCommand comando = new SqlCommand(comandoSql, Conexao.GetConexao());
 
-        //        // Configuração dos parâmetros do comando SQL
-        //        SqlParameter id = new SqlParameter("@id", System.Data.SqlDbType.Int, 0);
-        //        SqlParameter tipo = new SqlParameter("@tipo", System.Data.SqlDbType.Text, 25);
-        //        SqlParameter valor = new SqlParameter("@valor", System.Data.SqlDbType.Float);
+                // Configuração dos parâmetros do comando SQL
+                SqlParameter id = new SqlParameter("@id", System.Data.SqlDbType.Int, 0);
+                SqlParameter tipo = new SqlParameter("@tipo", System.Data.SqlDbType.Text, 25);
+                SqlParameter valor = new SqlParameter("@valor", System.Data.SqlDbType.Float);
 
-        //        // Atribuição dos valores aos parâmetros do comando SQL
-        //        id.Value = servico.IdServico;
-        //        tipo.Value = servico.TipoServico;
-        //        valor.Value = servico.ValorServico;
+                // Atribuição dos valores aos parâmetros do comando SQL
+                id.Value = servico.IdServico;
+                tipo.Value = servico.TipoServico;
+                valor.Value = servico.ValorServico;
 
-        //        // Adição dos parâmetros ao comando SQL
-        //        comando.Parameters.Add(id);
-        //        comando.Parameters.Add(tipo);
-        //        comando.Parameters.Add(valor);
+                // Adição dos parâmetros ao comando SQL
+                comando.Parameters.Add(id);
+                comando.Parameters.Add(tipo);
+                comando.Parameters.Add(valor);
 
-        //        // Compila a instrução e a submete ao banco de dados
-        //        comando.Prepare();
-        //        retorno = comando.ExecuteNonQuery();
+                // Compila a instrução e a submete ao banco de dados
+                comando.Prepare();
+                retorno = comando.ExecuteNonQuery();
 
-        //        if (retorno > 0)
-        //        {
-        //            resultado = true;
-        //        }
-        //        comando.Dispose();
-        //    }
-        //    catch (Exception ex)
-        //    {
+                if (retorno > 0)
+                {
+                    resultado = true;
+                }
+                comando.Dispose();
+            }
+            catch (Exception ex)
+            {
 
-        //        throw new Exception("Erro ao atualizar serviço" + ex);
-        //    }
-        //    return resultado;
-        //}
+                throw new Exception("Erro ao atualizar serviço" + ex);
+            }
+            return resultado;
+        }
 
         public static bool ValidarExcluirServico(int idServico)
         {

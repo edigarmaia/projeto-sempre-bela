@@ -84,6 +84,7 @@ namespace SempreBela
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
             //Retirei a condicional pq estavam fazendo a mesma coisa.
+            
             var usuarioId = UsuariosDao.InserirUsuario(usuarioForm());
             EnderecoDao.InserirEndereco(enderecoForm(usuarioId));
             limparDados();

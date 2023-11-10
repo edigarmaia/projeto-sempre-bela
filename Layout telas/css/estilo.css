@@ -72,6 +72,7 @@ p{
     display: block;
     width: 900px;
     height: auto;
+    
 }
 .main img {
     margin: 0px;
@@ -200,6 +201,7 @@ h4 {
 
 }
 */
+/*
 #form {
     position: relative;
     margin-top: 250px;
@@ -214,8 +216,19 @@ h4 {
     background: #FBFBFB;
     box-shadow: -1px 3px 5px 5px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
+    background-color: red;
+
+}*/
+#form{
+    padding: 40px;
+    width: min-content;
+    border-radius: 30px;
+    box-shadow: -1px 3px 5px 5px rgba(0, 0, 0, 0.25);
+margin-bottom: 50px;;
+color: #2b344b;
 
 }
+
 #form .item{
     position: relative;
     left: 60px;
@@ -258,7 +271,7 @@ h4 {
 #btn button {
     width: 150px;
     height: 50px;
-    background: #FF5FBF;
+        background: #FF5FBF;
     border-radius: 10px;
     border: none;
 }

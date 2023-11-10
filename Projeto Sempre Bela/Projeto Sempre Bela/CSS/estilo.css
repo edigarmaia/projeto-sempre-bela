@@ -45,7 +45,8 @@
     }
 
     .menu a:hover {
-        color: rgb(238, 42, 245);
+        /*color: rgb(238, 42, 245);*/
+        color: #FF5FBF;
         font-size: 18px;
         font-weight: bold;
     }
@@ -111,18 +112,20 @@ div.container {
 }
 
 .rosa {
-    background-color: rgb(247, 76, 213);
+  /*  background-color: rgb(247, 76, 213);*/
+    background: #FF5FBF;
+}
+
+    footer p {
+        font-family: 
 }
 
 
 footer {
-    background-color: rgb(247, 76, 213);
+    /* background-color: rgb(247, 76, 213);*/
+    background: #FF5FBF;
     width: 900px;
-    height: auto;
-}
-
-    footer p {
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: auto;'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-size: 16px;
         text-align: center;
         padding: 30px;
@@ -195,13 +198,13 @@ footer {
     width: 100%;
     text-align: center;
 }
-#btn .btn1 {
-
-    width: 150px;
-    height: 50px;
-/*  background: #FF5FBF;*/
-    border-radius: 10px;
-    border: none;
+    #btn .btn1 {
+        width: 150px;
+        height: 50px;
+        /*  background: #FF5FBF;*/
+        background: #FF5FBF;
+        border-radius: 10px;
+        border: none;
     }
 
 /* título principal e outros títulos */

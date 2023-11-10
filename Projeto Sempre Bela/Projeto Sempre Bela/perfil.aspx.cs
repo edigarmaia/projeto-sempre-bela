@@ -113,23 +113,23 @@ namespace SempreBela
         protected void btnEditar_Click(object sender, EventArgs e)
         {
 
-            //// Obtém o índice do item selecionado no ListBox
-            //int selectedIndex = lbxServicos.SelectedIndex;
-           
-            //if (selectedIndex >= 0)
-            //{
-            //    // Obtém o item selecionado
-            //    ListItem selectedItem = lbxServicos.Items[selectedIndex];
+            // Obtém o índice do item selecionado no ListBox
+            int selectedIndex = lbxServicos.SelectedIndex;
 
+            if (selectedIndex >= 0)
+            {
+                // Obtém o item selecionado
+                ListItem selectedItem = lbxServicos.Items[selectedIndex];
+
+                ServicosDao.EditarServico(servicoForm());
+            }
             //    ServicosDao.EditarServico(servicoForm());
-            //}
-            ////    ServicosDao.EditarServico(servicoForm());
-            ////    //limparDados();
-            ////    AtualizarListBox();
+            //    //limparDados();
+            //    AtualizarListBox();
         }
 
-       
-                
+
+
 
         // Logout
         protected void btnSair_Click1(object sender, EventArgs e)
