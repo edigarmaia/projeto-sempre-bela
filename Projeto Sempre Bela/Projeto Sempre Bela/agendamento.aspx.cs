@@ -1,6 +1,7 @@
 ﻿using Mecanismo.Dao.DaoAgendamento;
 using Mecanismo.Dao.DaoServicos;
 using Mecanismo.Dao.DaoUsuarios;
+using Mecanismo.Enums;
 using SempreBela.Dao.DaoAgendamento;
 using System;
 using System.Web.UI.WebControls;
@@ -9,6 +10,7 @@ namespace SempreBela
 {
     public partial class agendamento : System.Web.UI.Page
     {
+        protected TipoPerfil TipoPerfil;
         protected void Page_Load(object sender, EventArgs e)
         {
             //Validação verificando se há valores guardados na sessão. Caso tenha, significa que o usuário está logado, caso não tenha, o usuário é redirecionado para o login. 

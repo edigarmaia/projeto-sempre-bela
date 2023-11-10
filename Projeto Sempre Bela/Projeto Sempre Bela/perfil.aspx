@@ -10,7 +10,18 @@
     <link rel="stylesheet" href="CSS/estilo.css" />
 
     <%--Bootstrap--%>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+
+    
+    <%--teste js--%>
+    <script type="text/javascript">
+        function confirmarExclusao() {
+            return confirm("Tem certeza que deseja excluir este serviço?");
+        }
+    </script>
+
 </head>
 <body>
 
@@ -21,13 +32,25 @@
         <nav>
             <a href="index.aspx">
                 <img class="logo" src="Imagens/logo_sempre_bela.jpeg" alt="Logo Sempre Bela" /></a>
-            <ul class="itens-menu">
+             <ul class="itens-menu">
+                <%-- <% if (TipoPerfil == Mecanismo.Enums.TipoPerfil.Manicure)
+                    { %>
+                <li><a href="servicos.aspx">Serviços</a></li>
+                <% }
+                    else if (TipoPerfil == Mecanismo.Enums.TipoPerfil.Cliente)
+            {
+
+            }
+                    else
+                    { %>
+                <li><a href="agendamento.aspx">Agendamento</a></li>
+                <% } %>--%>
                 <li><a href="index.aspx">Home</a></li>
                 <li><a href="servicos.aspx">Serviços</a></li>
-                <li><a href="manicures.aspx">Manicures</a></li>
                 <li><a href="agendamento.aspx">Agendamento</a></li>
+                <li><a href="contato.aspx">Contato</a></li>
                 <li><a href="cadastro.aspx">Cadastro</a></li>
-                <li><a href="perfil.aspx">Meu Perfil</a></li>
+                 <li><a href="perfil.aspx">Meu Perfil</a></li>
             </ul>
         </nav>
     </div>
@@ -75,6 +98,7 @@
                 </table>
                 <hr />
 
+
                 <div>
                     <p>
                         <asp:Button ID="btnSair" runat="server" Value="Sair" Text="Sair" class="btn btn-outline-danger" OnClick="btnSair_Click1" />
@@ -86,24 +110,33 @@
                     <p>
                         <asp:ListBox ID="lbxServicos" runat="server" Width="400px" AutoPostBack="true" OnSelectedIndexChanged="lbxServicos_SelectedIndexChanged"></asp:ListBox>
                     </p>
-                    <br />
-            <p id="msgSucesso" style="color: rgb(0, 128, 0); text-align: center" visible="false" runat="server">Serviço excluído com sucesso!</p>
-            <p id="msgErro" style="color: rgb(200, 0, 0); text-align: center" visible="false" runat="server">Não é possível excluir o serviço devido a agendamentos associados!</p>
+                    
+                    <p id="msgSucesso" style="color: rgb(0, 128, 0); text-align: center" visible="false" runat="server">Serviço excluído com sucesso!</p>
+                    <p id="msgErro" style="color: rgb(200, 0, 0); text-align: center" visible="false" runat="server">Não é possível excluir o serviço devido a agendamentos associados!</p>
                     <div class="form-group">
                         <label for="">Nome Serviço</label>
-                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtNomeServico" runat="server"></asp:TextBox>
+                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtNomeServico" runat="server" placeholder="manicure"></asp:TextBox>
+                         <asp:RequiredFieldValidator ID="rfvNomeServico" runat="server" ControlToValidate="txtNomeServico"
+                            ErrorMessage="O nome do serviço é obrigatório." Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                     <div class="form-group">
                         <label for="">Valor</label>
-                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtValorServico" runat="server"></asp:TextBox>
+                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtValorServico" runat="server" placeholder="00,00"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvValorServico" runat="server" ControlToValidate="txtValorServico"
+   ErrorMessage="O valor do serviço é obrigatório." Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+
+
                     </div>
 
-         
+
                     <br />
                     <div>
                         <asp:Button ID="btnInserir" runat="server" Text="Inserir" class="btn btn-lg btn-success" OnClick="btnInserir_Click" />
                         <asp:Button ID="btnEditar" runat="server" Text="Editar" class="btn btn-lg btn-primary" OnClick="btnEditar_Click" />
-                        <asp:Button ID="btnExcluir" runat="server" Text="Excluir" class="btn btn-lg btn-danger" OnClick="btnExcluir_Click"/>
+                        <asp:Button ID="btnExcluir" runat="server" Text="Excluir" class="btn btn-lg btn-danger" OnClick="btnExcluir_Click" OnClientClick=" return confirmarExclusao();"/>
+                            
+                        <%--teste--%>
+<%--                        <controlstyle cssclass="btnExcluir" />--%>
 
                         <div />
                     </div>
@@ -114,7 +147,6 @@
     </div>
 
     <footer>
-
         <p>&copy2023 Sempre Bela - Todos os Direitos Reservados!</p>
     </footer>
 </body>

@@ -1,10 +1,12 @@
 ﻿using Mecanismo.Dao.DaoEnderecos;
 using System.Data.SqlClient;
+using System.Runtime.CompilerServices;
 
 namespace Mecanismo.Dao.DaoUsuarios
 {
     public class Usuario
     {
+
         private int idUsuario;
         private string nome;
         private string telefone;

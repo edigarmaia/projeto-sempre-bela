@@ -27,16 +27,23 @@ namespace SempreBela
             if((txtNome.Text != null) && (txtEmail.Text != null) && (txtTelefone.Text != null) && (txtAssunto.Text != null) && (txtMensagem.Text != null))
             {
                 limparDados();
-                msgSucesso.Visible = true;
+                MsgEnviadoSucesso();
+                //msgSucesso.Visible = true;
             }
             else
             {
-                msgErro.Visible = true;
-                msgSucesso.Visible = false;
+                //msgErro.Visible = true;
+                //msgSucesso.Visible = false;
             }
             
           
             
+        }
+        private void MsgEnviadoSucesso()
+        {
+            string script = "alert('Mensagem enviada com sucesso!');";
+            ClientScript.RegisterStartupScript(this.GetType(), "MsgEnviadoSucesso", script, true);
+
         }
     }
 }

@@ -116,8 +116,8 @@ div.container {
     background: #FF5FBF;
 }
 
-    footer p {
-        font-family: 
+footer p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 
@@ -125,10 +125,10 @@ footer {
     /* background-color: rgb(247, 76, 213);*/
     background: #FF5FBF;
     width: 900px;
-    height: auto;'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        font-size: 16px;
-        text-align: center;
-        padding: 30px;
+    height: auto;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px;
         /*font-style: bold;*/
     }
 

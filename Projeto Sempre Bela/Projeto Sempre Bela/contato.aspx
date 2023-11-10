@@ -85,8 +85,8 @@
 
             <br />
 
-            <p id="msgSucesso" style="color: rgb(0, 128, 0); text-align: center" visible="false" runat="server">Mensagem enviada com sucesso!</p>
-            <p id="msgErro" style="color: rgb(200, 0, 0); text-align: center" visible="false" runat="server">Preenchimento obrigatório!</p>
+           <%-- <p id="msgSucesso" style="color: rgb(0, 128, 0); text-align: center" visible="false" runat="server">Mensagem enviada com sucesso!</p>
+            <p id="msgErro" style="color: rgb(200, 0, 0); text-align: center" visible="false" runat="server">Preenchimento obrigatório!</p>--%>
 
             <asp:Button ID="btnEnviar" type="button" class="btn btn-lg btn-block w-100" runat="server" Style="background-color: #FF5FBF;
 ;" Text="Enviar" OnClick="btnEnviar_Click" />

@@ -6,6 +6,7 @@ using Mecanismo.Enums;
 using SempreBela.Dao.DaoAgendamento;
 using System;
 using System.Collections.Generic;
+using System.Web.Optimization;
 using System.Web.Security;
 using System.Web.UI.WebControls;
 
@@ -13,6 +14,9 @@ namespace SempreBela
 {
     public partial class perfil_manicure : System.Web.UI.Page
     {
+        protected TipoPerfil TipoPerfil;
+
+
         // Variáveis globais para serem utilizadas na classe toda e também no front
         protected List<Agendamento> Agendamentos = new List<Agendamento>();
         protected TipoPerfil Tipo;
@@ -45,9 +49,10 @@ namespace SempreBela
                     lbxServicos.Items.Add(new ListItem(servico.TipoServico, servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"))));
                 }
             }
-          
-          
+
+
         }
+
 
         protected void lbxServicos_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -79,7 +84,7 @@ namespace SempreBela
             decimal valor = Convert.ToDecimal(txtValorServico.Text);
 
             Servico servico = new Servico(nome, valor);
-            
+
             //Adicionando id da manicure responsável pela criação do serviço
             servico.IdManicure = (int)Session["idUsuario"];
 
@@ -101,6 +106,8 @@ namespace SempreBela
             {
                 lbxServicos.Items.Add(new ListItem(servico.TipoServico, servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"))));
             }
+            //msgErro.Visible = false;
+            //msgSucesso.Visible = false;
         }
 
         protected void btnInserir_Click(object sender, EventArgs e)
@@ -143,25 +150,75 @@ namespace SempreBela
 
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
-            string tipo = txtNomeServico.Text;
+            //string tipo = txtNomeServico.Text;
 
-            // Tenta excluir o serviço
-            bool exclusaoBemSucedida = ServicosDao.ExcluirServico(tipo);
+            //// Tenta excluir o serviço
+            //bool exclusaoBemSucedida = ServicosDao.ExcluirServico(tipo);
 
-            if (exclusaoBemSucedida)
+            //if (exclusaoBemSucedida)
+            //{
+            //    AtualizarListBox();
+            //    limparDados();
+            //    msgSucesso.Visible = true;
+            //}
+            //else
+            //{
+            //    msgErro.Visible = true;
+
+            //}
+            ////ServicosDao.ExcluirServico(tipo);
+            ////AtualizarListBox();
+            ////limparDados();
+            ///
+            //try
+            //{
+            //    MsgExcluido();
+            //    string tipo = txtNomeServico.Text;
+            //    ServicosDao.ExcluirServico(tipo);
+            //    AtualizarListBox();
+            //    limparDados();
+
+
+            //}
+            //catch(Exception ex) 
+            //{
+            //    msgSucesso.Visible = false;
+            //    msgErro.Visible = true;
+
+            //}
+
+            try
             {
+                string tipo = txtNomeServico.Text;
+
+
+                // Realiza a exclusão
+                ServicosDao.ExcluirServico(tipo);
+                MsgExcluido();
                 AtualizarListBox();
                 limparDados();
-                msgSucesso.Visible = true;
-            }
-            else
-            {
-                msgErro.Visible = true;
 
             }
-            //ServicosDao.ExcluirServico(tipo);
-            //AtualizarListBox();
-            //limparDados();
+            catch (Exception ex)
+            {
+                MsgErro();
+
+            }
+        }
+
+
+        private void MsgExcluido()
+        {
+            // Registrando um script do lado do cliente para exibir um alerta após o postback
+            string script = "alert('Item excluído com sucesso!');";
+            ClientScript.RegisterStartupScript(this.GetType(), "MsgExcluido", script, true);
+
+        }
+        private void MsgErro()
+        {
+            string script = "alert('Não é possível excluir o serviço devido a agendamentos associados!');";
+            ClientScript.RegisterStartupScript(this.GetType(), "MsgExcluido", script, true);
+
         }
     }
 }
