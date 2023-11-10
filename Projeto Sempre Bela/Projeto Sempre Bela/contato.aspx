@@ -97,8 +97,6 @@
     <br />
 
 
-
-
     <footer>
         <p>&copy2023 Sempre Bela - Todos os Direitos Reservados!</p>
     </footer>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -21,23 +22,26 @@ namespace SempreBela
             txtAssunto.Text = "";
             txtMensagem.Text = "";
         }
+      
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
-            if((txtNome.Text != null) && (txtEmail.Text != null) && (txtTelefone.Text != null) && (txtAssunto.Text != null) && (txtMensagem.Text != null))
-            {
-                limparDados();
-                MsgEnviadoSucesso();
-                //msgSucesso.Visible = true;
-            }
-            else
-            {
-                //msgErro.Visible = true;
-                //msgSucesso.Visible = false;
-            }
-            
-          
-            
+
+
+            //if((txtNome.Text != null) && (txtEmail.Text != null) && (txtTelefone.Text != null) && (txtAssunto.Text != null) && (txtMensagem.Text != null))
+            //{
+            limparDados();
+            MsgEnviadoSucesso();
+            //msgSucesso.Visible = true;
+            //}
+            //else
+            //{
+            //    //msgErro.Visible = true;
+            //    //msgSucesso.Visible = false;
+            //}
+
+
+
         }
         private void MsgEnviadoSucesso()
         {
