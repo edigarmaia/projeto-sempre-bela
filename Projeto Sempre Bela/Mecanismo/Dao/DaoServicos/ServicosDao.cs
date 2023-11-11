@@ -108,7 +108,7 @@ namespace Mecanismo.Dao.DaoServicos
             {
                 int retorno;
                 //string comandoSql = "UPDATE servicos SET valorServico = @valor WHERE tipoServico LIKE @tipo";
-                string comandoSql = "UPDATE servicos SET tipoServico = @tipo, valorServico = @valor WHERE idServico = @id";
+                string comandoSql = "UPDATE servicos SET tipoServico = @tipo, valorServico = @valor WHERE idServico = usuario.id";
 
                 //string comandoSql = "UPDATE servicos SET valorServico = @valor WHERE tipoServico = @tipo";
 

@@ -48,11 +48,11 @@ CREATE TABLE [dbo].[servicos] (
     PRIMARY KEY CLUSTERED ([idServico] ASC),
     FOREIGN KEY ([idManicure]) REFERENCES [dbo].[usuarios] ([idUsuario])
 );
-
+-- drop table agendamento;
 CREATE TABLE [dbo].[agendamento] (
     [idAgendamento]    INT          IDENTITY (1, 1) NOT NULL,
     [dataAgendamento]  DATETIME     NOT NULL,
-    [horaAgendamento]  TIME (5)     NOT NULL,
+    --[horaAgendamento]  TIME (5)     NOT NULL,
     [localAgendamento] VARCHAR (50) NOT NULL,
     [idManicure]       INT          NOT NULL,
     [idServico]        INT          NOT NULL,

@@ -15,6 +15,24 @@ namespace SempreBela
     {
 
         /// <summary>
+        /// lblStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStatus;
+
+        /// <summary>
+        /// btnStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnStatus;
+
+        /// <summary>
         /// btnSair control.
         /// </summary>
         /// <remarks>
@@ -42,15 +60,6 @@ namespace SempreBela
         protected global::System.Web.UI.WebControls.ListBox lbxServicos;
 
         /// <summary>
-        /// msgSucesso control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl msgSucesso;
-
-        /// <summary>
         /// msgErro control.
         /// </summary>
         /// <remarks>
@@ -69,15 +78,6 @@ namespace SempreBela
         protected global::System.Web.UI.WebControls.TextBox txtNomeServico;
 
         /// <summary>
-        /// rfvNomeServico control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNomeServico;
-
-        /// <summary>
         /// txtValorServico control.
         /// </summary>
         /// <remarks>
@@ -85,15 +85,6 @@ namespace SempreBela
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtValorServico;
-
-        /// <summary>
-        /// rfvValorServico control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvValorServico;
 
         /// <summary>
         /// btnInserir control.

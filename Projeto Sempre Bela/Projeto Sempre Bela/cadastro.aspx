@@ -15,38 +15,6 @@
 </head>
 <body>
 
-<%--    <script type="text/javascript">
-    function validarCadastro() {
-        var nome = document.getElementById('<%= txtNome.ClientID %>').value;
-        var telefone = document.getElementById('<%= txtTelefone.ClientID %>').value;
-        var cpf = document.getElementById('<%= txtCpf.ClientID %>').value;
-        var email = document.getElementById('<%= txtEmail.ClientID %>').value;
-        var senha = document.getElementById('<%= txtSenha.ClientID %>').value;
-        var rua = document.getElementById('<%= txtRua.ClientID %>').value;
-        var numero = document.getElementById('<%= txtNumero.ClientID %>').value;
-        var complemento = document.getElementById('<%= txtComplemento.ClientID %>').value;
-        var bairro = document.getElementById('<%= txtBairro.ClientID %>').value;
-        var cep = document.getElementById('<%= txtCep.ClientID %>').value;
-        var cidade = document.getElementById('<%= txtCidade.ClientID %>').value;
-        var estado = document.getElementById('<%= txtEstado.ClientID %>').value;
-
-        if (nome.trim() === "") {
-            alert("Por favor, insira um nome.");
-            return false;
-        }
-        if (telefone.trim() === "") {
-            alert("Por favor, insira um telefone.");
-            return false;
-        }
-
-        // Adicione validações semelhantes para os outros campos conforme necessário...
-
-        // Se todas as validações passarem, retorne true para permitir o envio do formulário
-        return true;
-    }
-</script>--%>
-
-
     <%--Menu--%>
     <div class="menu">
         <nav>

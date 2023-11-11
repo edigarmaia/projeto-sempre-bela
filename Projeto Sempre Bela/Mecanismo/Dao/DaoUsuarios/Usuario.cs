@@ -6,7 +6,7 @@ namespace Mecanismo.Dao.DaoUsuarios
 {
     public class Usuario
     {
-
+        
         private int idUsuario;
         private string nome;
         private string telefone;

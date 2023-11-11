@@ -220,5 +220,13 @@ namespace SempreBela
             ClientScript.RegisterStartupScript(this.GetType(), "MsgExcluido", script, true);
 
         }
+
+        protected void btnStatus_Click(object sender, EventArgs e)
+        {
+            lblStatus.Text = "Cancelado";
+            lblStatus.ForeColor = System.Drawing.Color.Red;
+            btnStatus.ForeColor = System.Drawing.Color.Red; 
+            btnStatus.Visible = false;
+        }
     }
 }
