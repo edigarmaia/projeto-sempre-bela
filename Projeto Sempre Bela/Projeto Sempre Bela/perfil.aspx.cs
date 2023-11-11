@@ -1,7 +1,6 @@
 ﻿using Mecanismo.Dao;
 using Mecanismo.Dao.DaoAgendamento;
 using Mecanismo.Dao.DaoServicos;
-using Mecanismo.Dao.DaoUsuarios;
 using Mecanismo.Enums;
 using SempreBela.Dao.DaoAgendamento;
 using System;
@@ -119,17 +118,50 @@ namespace SempreBela
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
+            
+            //try
+            //{
+                ServicosDao servicosDao = new ServicosDao();
 
-            // Obtém o índice do item selecionado no ListBox
-            int selectedIndex = lbxServicos.SelectedIndex;
+                string nomeServico = txtNomeServico.Text.Trim();
+                decimal valorServico = Convert.ToDecimal(txtValorServico.Text.Trim());
 
-            if (selectedIndex >= 0)
-            {
-                // Obtém o item selecionado
-                ListItem selectedItem = lbxServicos.Items[selectedIndex];
+                //Buscar o Id do servico
+                int idServico = servicosDao.BuscarIdServico(nomeServico);
+             
+                if (idServico > 0)
+                {
+                    // Atualizar o serviço usando o ID
+                    ServicosDao.EditarServico(idServico, nomeServico, valorServico);
+                    limparDados();
+                    AtualizarListBox();
 
-                ServicosDao.EditarServico(servicoForm());
-            }
+
+                    // Lógica adicional após a atualização, se necessário
+
+                    Response.Write("Atualização bem-sucedida!");
+                }
+                else
+                {
+                    Response.Write("Serviço não encontrado.");
+                }
+            //}
+            //catch (Exception ex)
+            //{
+            //    // Tratar exceções
+            //    Response.Write("Erro durante a atualização: " + ex.Message);
+            //}
+
+            //// Obtém o índice do item selecionado no ListBox
+            //int selectedIndex = lbxServicos.SelectedIndex;
+
+            //if (selectedIndex >= 0)
+            //{
+            //    // Obtém o item selecionado
+            //    ListItem selectedItem = lbxServicos.Items[selectedIndex];
+
+            //    ServicosDao.EditarServico(servicoForm());
+            //}
             //    ServicosDao.EditarServico(servicoForm());
             //    //limparDados();
             //    AtualizarListBox();
