@@ -318,3 +318,52 @@ color: #2b344b;
 
 */
 /* links finais */
+/* Responsividade*/
+/*media queries*/
+
+/* Tablet */
+/*
+@media only screen and(max-width: 768px){
+    *{
+    text-align: left;
+    background-color: red;
+    }
+ div{
+    width: 49%;
+ }
+ .main{
+    width: 85%;
+ }
+ p{
+    text-align: left;
+ }
+ h1{
+
+ }
+}
+
+/* Smartphone */
+/*
+@media only screen and(max-width: 500px){
+    *{
+        text-align: left;
+        background-color: red;
+        }
+     div.menu{
+        flex-direction: column;
+     }
+        div{
+        width: 49%;
+     }
+     .main{
+        width: 85%;
+     }
+     p{
+        text-align: left;
+     }
+     h1{
+    
+     }
+}
+
+*/

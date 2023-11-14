@@ -1,8 +1,6 @@
 CREATE DATABASE bd_agencia;
---DROP DATABASE bd_agencia;
 USE bd_agencia;
 
--- Como são poucos tipos (cliente, manicure) não é necessário colocar IDENTITY. Caso sejam adicionados novos, podem ser feitos manualmente seguindo a ordem dos id's anteriores.
 CREATE TABLE [dbo].[tipoUsuarios](
 	[idTipoUsuario] INT NOT NULL,
 	[nome]			VARCHAR(20) NOT NULL,
@@ -11,8 +9,6 @@ CREATE TABLE [dbo].[tipoUsuarios](
 
 INSERT INTO tipoUsuarios VALUES (1, 'Cliente'), (2, 'Manicure')
 
--- Retirei as tabelas de manicures e clientes por conter a mesma estrutura de dados nas duas. Essa prática diminui a complexidade do projeto (uma vez que tenha que manipular dois objetos com a mesma estrutura) 
--- e facilita as relações, tendo que referenciar somente o id daquele usuário especificamente
 CREATE TABLE [dbo].[usuarios](
     [idUsuario]      INT		  IDENTITY (1, 1) NOT NULL,
     [email]          VARCHAR (50) NOT NULL,
@@ -43,16 +39,14 @@ CREATE TABLE [dbo].[servicos] (
     [idServico]    INT          IDENTITY (1, 1) NOT NULL,
     [tipoServico]  VARCHAR (25) NOT NULL,
     [valorServico] FLOAT (53)   NOT NULL,
-	--[idManicure]   INT			IDENTITY (1, 1) NOT NULL,
 	[idManicure] INT NOT NULL,
     PRIMARY KEY CLUSTERED ([idServico] ASC),
     FOREIGN KEY ([idManicure]) REFERENCES [dbo].[usuarios] ([idUsuario])
 );
--- drop table agendamento;
+
 CREATE TABLE [dbo].[agendamento] (
     [idAgendamento]    INT          IDENTITY (1, 1) NOT NULL,
     [dataAgendamento]  DATETIME     NOT NULL,
-    --[horaAgendamento]  TIME (5)     NOT NULL,
     [localAgendamento] VARCHAR (50) NOT NULL,
     [idManicure]       INT          NOT NULL,
     [idServico]        INT          NOT NULL,

@@ -98,7 +98,7 @@
                                 <asp:Label ID="lblStatus" runat="server" Text="Aguardando"></asp:Label>
                             </td>
                             <td>
-                                <asp:Button ID="btnStatus" runat="server" Value="" Text="Cancelar" class="btn btn-outline-danger" OnClick="btnStatus_Click"/>
+                                <asp:Button ID="btnStatus" runat="server" Value="" Text="Cancelar" class="btn btn-outline-danger" OnClick="btnStatus_Click" />
                             </td>
                         </tr>
                         <% } %>
@@ -110,7 +110,11 @@
                 <div>
                     <p>
                         <asp:Button ID="btnSair" runat="server" Value="Sair" Text="Sair" class="btn btn-outline-danger" OnClick="btnSair_Click1" />
+                        <asp:Button ID="btnAlterarDados" runat="server" Value="Alterar" Text="Alterar" class="btn btn-outline-primary" />
+
                     </p>
+                   
+
                 </div>
                 <div id="sessaoManicure" visible="false" runat="server">
                     <h5>Serviços Oferecidos</h5>
@@ -119,7 +123,7 @@
                         <asp:ListBox ID="lbxServicos" runat="server" Width="400px" AutoPostBack="true" OnSelectedIndexChanged="lbxServicos_SelectedIndexChanged"></asp:ListBox>
                     </p>
 
-<%--                    <p id="msgSucesso" style="color: rgb(0, 128, 0); text-align: center" visible="false" runat="server">Serviço excluído com sucesso!</p>--%>
+                    <%--                    <p id="msgSucesso" style="color: rgb(0, 128, 0); text-align: center" visible="false" runat="server">Serviço excluído com sucesso!</p>--%>
                     <p id="msgErro" style="color: rgb(200, 0, 0);" visible="false" runat="server">Cancelado</p>
                     <div class="form-group">
                         <label for="">Nome Serviço</label>
