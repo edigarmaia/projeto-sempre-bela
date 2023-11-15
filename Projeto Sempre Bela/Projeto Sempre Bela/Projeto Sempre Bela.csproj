@@ -110,6 +110,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="agendamento.aspx" />
+    <Content Include="alterarAgendamento.aspx" />
     <Content Include="cadastro.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="contato.aspx" />
@@ -218,6 +219,13 @@
     </Compile>
     <Compile Include="agendamento.aspx.designer.cs">
       <DependentUpon>agendamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="alterarAgendamento.aspx.cs">
+      <DependentUpon>alterarAgendamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="alterarAgendamento.aspx.designer.cs">
+      <DependentUpon>alterarAgendamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
