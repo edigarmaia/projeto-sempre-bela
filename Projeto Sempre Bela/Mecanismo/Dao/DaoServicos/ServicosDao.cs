@@ -140,7 +140,6 @@ namespace Mecanismo.Dao.DaoServicos
         
         
         // Metodo que edita ums serviço
-        //public static bool EditarServico(Servico servico)
         public static bool EditarServico(int id, string nome, decimal valor)
         {
             bool resultado = false;
@@ -148,12 +147,8 @@ namespace Mecanismo.Dao.DaoServicos
             try
             {
                 int retorno;
-                //string comandoSql = "UPDATE servicos SET valorServico = @valor WHERE tipoServico LIKE @tipo";
                 string comandoSql = "UPDATE servicos SET tipoServico = @tipo, valorServico = @valor WHERE idServico LIKE @id";
 
-                //string comandoSql = "UPDATE servicos SET valorServico = @valor WHERE tipoServico = @tipo";
-
-                //string comandoSql = "UPDATE servicos SET tipoServico=@tipo, valorServico=@valor WHERE idServico LIKE @id";
                 SqlCommand comando = new SqlCommand(comandoSql, Conexao.GetConexao());
 
                 // Configuração dos parâmetros do comando SQL
