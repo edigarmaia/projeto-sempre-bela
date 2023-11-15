@@ -9,6 +9,45 @@ namespace Mecanismo.Dao.DaoAgendamento
 {
     public class AgendamentoDao
     {
+        //public static bool InserirAgendamento(Agendamento agendamento)
+        //{
+        //    bool resultado = false;
+        //    int retorno;
+
+        //    string comandoSql = "INSERT INTO agendamento (dataAgendamento, localAgendamento, idManicure, idServico, idCliente) " +
+        //        "VALUES (@dataAgendamento, @localAgendamento, @idManicure, @idServico, @idCliente)";
+
+        //    SqlCommand comando = new SqlCommand(comandoSql, Conexao.GetConexao());
+
+        //    SqlParameter dataAgendamento = new SqlParameter("@dataAgendamento", SqlDbType.DateTime);
+        //    SqlParameter localAgendamento = new SqlParameter("@localAgendamento", SqlDbType.VarChar, 50);
+        //    SqlParameter idManicure = new SqlParameter("@idManicure", SqlDbType.Int);
+        //    SqlParameter idServico = new SqlParameter("@idServico", SqlDbType.Int);
+        //    SqlParameter idCliente = new SqlParameter("@idCliente", SqlDbType.Int);
+
+        //    dataAgendamento.Value = agendamento.DataAgendamento;
+        //    localAgendamento.Value = agendamento.LocalAgendamento;
+        //    idManicure.Value = agendamento.IdManicure;
+        //    idServico.Value = agendamento.IdServico;
+        //    idCliente.Value = agendamento.IdCliente;
+
+        //    // Defina os parâmetros
+        //    comando.Parameters.Add(dataAgendamento);
+        //    comando.Parameters.Add(localAgendamento);
+        //    comando.Parameters.Add(idManicure);
+        //    comando.Parameters.Add(idServico);
+        //    comando.Parameters.Add(idCliente);
+
+        //    comando.Prepare();
+        //    retorno = comando.ExecuteNonQuery();
+
+        //    if (retorno > 0)
+        //        resultado = true;
+
+        //    comando.Dispose();
+
+        //    return resultado;
+        //}
         public static bool InserirAgendamento(Agendamento agendamento)
         {
             bool resultado = false;
@@ -43,7 +82,7 @@ namespace Mecanismo.Dao.DaoAgendamento
 
             if (retorno > 0)
                 resultado = true;
-            
+
             comando.Dispose();
 
             return resultado;

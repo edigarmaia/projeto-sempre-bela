@@ -53,10 +53,8 @@
                    
                     <asp:DropDownList ID="ddlServico" runat="server" Width="300px"></asp:DropDownList>
                 </p>
-                <%--<p>
-                    Valor: 
-   
-                    <asp:DropDownList ID="ddlValorServico" runat="server" Width="314px"></asp:DropDownList>
+               <%-- <p>
+                    Valor do Serviço R$  <asp:Label ID="lblValorServico" runat="server" Text=" "></asp:Label>
                 </p>--%>
                 <p>
                     Data:
@@ -67,7 +65,7 @@
                     Local:<asp:TextBox ID="txtLocalAgendamento" runat="server" Width="315px" />
                 </p>
                 <p>
-                    <asp:Button ID="btnAgendar" runat="server" Text="Agendar" class="btn btn-lg" Style="background-color: rgb(247, 76, 213);"
+                    <asp:Button ID="btnAgendar" runat="server" Text="Agendar" class="btn btn-lg" Style="background-color: #FF5FBF;"
                         OnClick="btnAgendar_Click" />
                 </p>
 

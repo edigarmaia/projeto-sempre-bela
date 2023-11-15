@@ -73,7 +73,14 @@ namespace Mecanismo.Dao.DaoServicos
         {
             List<Servico> servicos = new List<Servico>();
 
-            string comandoSql = "SELECT idServico, tipoServico, valorServico FROM servicos WHERE idManicure = @idUsuario";
+
+            //string comandoSql = "SELECT IdServico,  TipoServico + '-' + CAST(ValorServico AS VARCHAR(15)) As TipoServico FROM servicos WHERE idManicure = @idUsuario";
+            //string comandoSql = "SELECT idServico, tipoServico + ' - ' + CAST(valorServico AS VARCHAR(15)) As tipoServico, valorServico FROM servicos WHERE idManicure = @idUsuario";
+            //string comandoSql = "SELECT idServico, tipoServico + ' - ' + CAST(valorServico AS VARCHAR(15)) As tipoServico, valorServico FROM servicos WHERE idManicure = @idUsuario";
+            string comandoSql = "SELECT idServico, tipoServico + ' - R$ ' + FORMAT(valorServico, 'N2') AS tipoServico, valorServico FROM servicos WHERE idManicure = @idUsuario";
+
+
+            //string comandoSql = "SELECT idServico, tipoServico, valorServico FROM servicos WHERE idManicure = @idUsuario";
             SqlCommand comando = new SqlCommand(comandoSql, Conexao.GetConexao());
 
             SqlParameter idManicure = new SqlParameter("@idUsuario", System.Data.SqlDbType.Int);

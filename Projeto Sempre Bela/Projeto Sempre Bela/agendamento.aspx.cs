@@ -47,8 +47,10 @@ namespace SempreBela
             //Evento de clique do select de manicures que, quando uma manicure é selecionada, o id relativo é capturado e é utilizado para filtrar o Select de serviços,
             //assim exibindo somente os serviços cadastrados pela manicure em questão.
             ddlServico.DataSource = ServicosDao.ListarServicosPorManicure(int.Parse(ddlManicure.SelectedValue));
+            //ddlServico.DataTextField = "TipoServico";
             ddlServico.DataTextField = "TipoServico";
             ddlServico.DataValueField = "IdServico";
+            //lblValorServico.Text = ;
             ddlServico.DataBind();
             ddlServico.Items.Insert(0, new ListItem("Selecione um serviço", "NA"));
         }
