@@ -30,29 +30,43 @@ namespace SempreBela
 
         protected void btnAgendar_Click(object sender, EventArgs e)
         {
-            //Utilizando os inputs, valores capturados no select e o id do cliente logado para cadastrar um agendamento.
-            AgendamentoDao.InserirAgendamento(new Agendamento(
-                dataAgendamento: DateTime.Parse(txtDataAgendamento.Text),
-                localAgendamento: txtLocalAgendamento.Text,
-                idServico: int.Parse(ddlServico.SelectedValue),
-                idManicure: int.Parse(ddlManicure.SelectedValue),
-                idCliente: (int)Session["idUsuario"])
-            );
+            DateTime dataAgendamento = DateTime.Parse(txtDataAgendamento.Text);
+            string localAgendamento = txtLocalAgendamento.Text;
+            int idServico = int.Parse(ddlServico.SelectedValue);
+            int idManicure = int.Parse(ddlManicure.SelectedValue);
+            int idCliente = (int)Session["idUsuario"];
 
-            Response.Redirect("perfil.aspx");
-        }
+            // Verificar se há um agendamento ativo que bloqueia os próximos 30 minutos
+            DateTime fimAgendamento;
+            if (AgendamentoDao.ValidarAgendamento(idManicure, dataAgendamento, out fimAgendamento))
+            {
+                MsgErro($"Já existe um agendamento ativo. O próximo horário disponível é a partir de {fimAgendamento.ToString("HH:mm")}");
+            }
+           
+            else
+            {
+                AgendamentoDao.InserirAgendamento(new Agendamento(dataAgendamento, localAgendamento, idServico, idManicure, idCliente));
+                Response.Redirect("perfil.aspx");
+            }
+            }
 
-        protected void ddlManicure_SelectedIndexChanged(object sender, EventArgs e)
+            protected void ddlManicure_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Evento de clique do select de manicures que, quando uma manicure é selecionada, o id relativo é capturado e é utilizado para filtrar o Select de serviços,
             //assim exibindo somente os serviços cadastrados pela manicure em questão.
             ddlServico.DataSource = ServicosDao.ListarServicosPorManicure(int.Parse(ddlManicure.SelectedValue));
-            //ddlServico.DataTextField = "TipoServico";
             ddlServico.DataTextField = "TipoServico";
             ddlServico.DataValueField = "IdServico";
-            //lblValorServico.Text = ;
             ddlServico.DataBind();
             ddlServico.Items.Insert(0, new ListItem("Selecione um serviço", "NA"));
         }
+
+      
+        private void MsgErro(string mensagem = "Erro no agendamento.")
+        {
+            lblErro.Text = mensagem;
+            lblErro.Visible = true;
+        }
+
     }
 }
