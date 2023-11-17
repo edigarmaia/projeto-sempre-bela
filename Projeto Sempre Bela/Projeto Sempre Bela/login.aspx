@@ -38,12 +38,12 @@
 
                 <label class="label" for="Nome" runat="server">E-mail </label>
                 <div class="input">
-                    <asp:TextBox type="email" class="form-control form-control-sm" placeholder="E-mail" ID="txtEmail" runat="server"></asp:TextBox>
+                    <asp:TextBox type="email" class="form-control form-control-sm" placeholder="E-mail" ID="txtEmail" runat="server">felipe@gmail.com</asp:TextBox>
                 </div>
 
                 <label class="label" for="Senha" runat="server">Senha </label>
                 <div class="input">
-                    <asp:TextBox type="password" class="form-control form-control-sm" placeholder="Insira a senha" ID="txtSenha" runat="server"></asp:TextBox>
+                    <asp:TextBox type="password" class="form-control form-control-sm" placeholder="Insira a senha" ID="txtSenha" runat="server">123456</asp:TextBox>
                 </div>
 
                

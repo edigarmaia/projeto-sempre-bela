@@ -56,7 +56,7 @@ CREATE TABLE [dbo].[agendamento] (
     FOREIGN KEY ([idServico]) REFERENCES [dbo].[servicos] ([idServico]),
     FOREIGN KEY ([idCliente]) REFERENCES [dbo].[usuarios] ([idUsuario])
 );
-
+DELETE FROM agendamento WHERE idAgendamento BETWEEN 7 AND 11;
 
 
 

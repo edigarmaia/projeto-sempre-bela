@@ -88,6 +88,10 @@
                                           agendamento.Manicure.Nome : agendamento.Cliente.Nome 
                                     %>
                                 </td>
+                            <!-- Adicionando um atributo data com o ID do agendamento ao botão -->
+                                <%--<td id="txtId" runat="server" style="display: none;"><%= Agendamentos%></td>--%>
+
+
                             <td><%=agendamento.Servico.TipoServico%></td>
                             <td><%=agendamento.DataAgendamento.ToShortDateString()%></td>
                             <td><%=agendamento.DataAgendamento.ToString("HH:mm")%></td>
@@ -97,8 +101,14 @@
                             <td>
                                 <asp:Label ID="lblStatus" runat="server" Text="Aguardando"></asp:Label>
                             </td>
+
                             <td>
-                                <asp:Button ID="btnStatus" runat="server" Value="" Text="Cancelar" class="btn btn-outline-danger" OnClick="btnStatus_Click" />
+<%--                               <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" 
+                                   CommandName="CancelarAgendamento" CommandArgument='<%#Eval("IdAgendamento")%>' OnClick="btnCancelarAgendamento_Click" />--%>
+                                
+                               <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" 
+                                   CommandName="CancelarAgendamento" CommandArgument='<%#Eval("IdAgendamento")%>' OnClick="btnCancelarAgendamento_Click" />
+       
                             </td>
                         </tr>
                         <% } %>
@@ -113,7 +123,7 @@
                         <asp:Button ID="btnAlterarDados" runat="server" Value="Alterar" Text="Alterar" class="btn btn-outline-primary" />
 
                     </p>
-                   
+
 
                 </div>
                 <div id="sessaoManicure" visible="false" runat="server">

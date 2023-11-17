@@ -148,6 +148,7 @@
     <Content Include="Imagens\unhas_formais.jpeg" />
     <Content Include="Imagens\unhas_gel.png" />
     <Content Include="index.aspx" />
+    <Content Include="JS\scripts.js" />
     <Content Include="login.aspx" />
     <Content Include="perfil.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />

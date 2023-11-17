@@ -104,7 +104,7 @@
 
 
 
-                    <asp:Button ID="btnCadastrar" OnClientClick="return validarCadastro();" runat="server" Text="Cadastrar" class="btn btn-lg btn-block w-100" Style="background-color: rgb(247, 76, 213);" OnClick="btnCadastrar_Click" />
+                    <asp:Button ID="btnCadastrar" OnClientClick="return validarCadastro();" runat="server" Text="Cadastrar" class="btn btn-lg btn-block w-100" Style="background-color: #FF5FBF;" OnClick="btnCadastrar_Click" />
 
                     <br />
                     <br />

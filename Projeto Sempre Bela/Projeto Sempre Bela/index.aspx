@@ -78,7 +78,7 @@
     <!-- Segunda linha -->
 
     <h3>Destaques</h3>
-    <br>
+    <br/>
     <div class="tendencias">
         <div class="row">
             <div class="col-sm">

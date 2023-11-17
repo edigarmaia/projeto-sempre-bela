@@ -133,7 +133,50 @@ namespace Mecanismo.Dao.DaoAgendamento
             return true;
         }
 
+        // Método que exclui um agendamento
+        public static bool ExcluirAgendamento(int id)
+        {
+            bool retorno = false;
+            int resultado;
 
+            try
+            {
+                // Query sql - Criação do comando
+                string comandoSql = "DELETE FROM agendamento WHERE idAgendamento = @idAgendamento";
+                //string comandoSql = "DELETE FROM agendamento WHERE agendamento.id = @id";
+                SqlCommand comando = new SqlCommand(comandoSql, Conexao.GetConexao());
+
+                // Criação do parâmetro
+                SqlParameter agendamentoId = new SqlParameter("@idAgendamento", System.Data.SqlDbType.Int);
+
+                // Definição do valor do parâmetro.
+                agendamentoId.Value = id;
+
+                // Atribuição do parâmetro ao comando
+                comando.Parameters.Add(agendamentoId);
+
+                // Compilação e execução do comando
+                comando.Prepare();
+                resultado = comando.ExecuteNonQuery();
+
+                if (resultado != 0)
+                {
+                   retorno = true;
+                }
+
+                // Limpeza de recursos
+                comando.Dispose();
+
+
+            }
+            catch (Exception ex)
+            {
+                // Tratar a exceção
+                throw new Exception("Erro ao excluir agendamento", ex);
+            }
+
+            return retorno;
+        }
 
     }
 

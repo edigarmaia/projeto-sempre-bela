@@ -24,13 +24,13 @@ namespace SempreBela
         protected global::System.Web.UI.WebControls.Label lblStatus;
 
         /// <summary>
-        /// btnStatus control.
+        /// btnCancelarAgendamento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnStatus;
+        protected global::System.Web.UI.WebControls.Button btnCancelarAgendamento;
 
         /// <summary>
         /// btnSair control.
