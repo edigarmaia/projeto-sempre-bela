@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -15,51 +15,67 @@
 <body>
     <div class="menu">
         <nav>
-            <img src="Imagens/logo_sempre_bela.jpeg" alt="Logo Sempre Bela" width="250px" height="156px" />
+            <a href="index.html"></a><img class="logo" src="Imagens/logo_sempre_bela.jpeg" alt="Logo Sempre Bela"/></a>
             <ul class="itens-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="manicures.html">Manicures</a></li>
-                <li><a href="agendamento.html">Agendamento</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
+              <li><a href="servicos.html">Serviços</a></li>
+              <li><a href="agendamento.html">Agendamento</a></li>
+              <li><a href="contato.html">Contato</a></li>
+              <li><a href="cadastro.html">Cadastro</a></li>
             </ul>
         </nav>
     </div>
 
 
-    <!--
-    <div class="login">-->
-        
 
-    <!-- <div class="principal" id="form"> -->
-    <div id="form">
-        <form class="px-4 py-3">
-            <h2 class="title">Login</h2>
+    <div class="main">
 
-            <label class="label" for="Nome"> E-mail </label>
-            <div class="input">
-                <input type="email" class="email" id="email" placeholder="E-mail">
-            </div>
-
-            <label class="label" for="Senha"> Senha </label>
-            <div class="input">
-                <input type="password" class="senha" id="senha" placeholder="Insira a senha" autocomplete="on">
-            </div>
-
-            <div id="btn">
-                <button class="btn1 btn-lg w-100" type="submit" id="btn" onclick="botao()"><span>Entrar</span>
-            </div> <br>
-        </form>
-        <div class="dropdown-divider" id="final"></div>
-        <!-- linkar tela -->
+       
+        <div class="principal" id="form">
+            <form class="px-4 py-3">
+                <h2 class="title">Login</h2>
+    
+                <label class="label" for="Nome"> E-mail </label>
+                <div class="input">
+                    <input type="email" class="email" id="email" placeholder="E-mail">
+                </div>
+    
+                <label class="label" for="Senha"> Senha </label>
+                <div class="input">
+                    <input type="password" class="senha" id="senha" placeholder="Insira a senha"  autocomplete="on">
+                </div>
+    
+            
+    
+    
+                <div id="btn">
+                    <button class="btn1" type="submit" id="btn" onclick="botao()"><span>Entrar</span>
+                </div> <br>
+            </form>
+            <div class="dropdown-divider" id="final"></div>
+            <!-- linkar tela -->
         <a class="item" href="cadastro.html">Não tem uma conta? Então cadastre-se</a> <br><br>
-        <!-- <a class="item2" href="#">Esqueceu a senha?</a> <br><br> -->
+       <!-- <a class="item2" href="#">Esqueceu a senha?</a> <br><br> -->
+    </div>
+
 
     </div>
 
-    <footer>
-        <p>&copy2023 Sempre Bela - Todos os Direitos Reservados!</p>
-    </footer>
+
+
+
+
+        <footer><!--
+      <ul class="rodape">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Manicures</a></li>
+        <li><a href="#">Agendamento</a></li>
+        <li><a href="#">Cadastro</a></li>
+    </ul> -->
+
+            <p>&copy2023 Sempre Bela - Todos os Direitos Reservados!</p>
+        </footer>
 </body>
 
-</html> 
+</html>

@@ -14,25 +14,31 @@
 
 .itens-menu {
     display: inline-flex;
-    float: right;
-    margin-top: -100px;
+    float: center;
+    margin-top: 50px;
+   
+/*
+    margin-top: -100px;*/
    
 }
 
 .itens-menu li {
-    padding: 30px;
+    padding: 20px;
     list-style-type: none;
-
     color: black;
-   
-    /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
-    font-size: 16px;
+        /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
+    font-size: 17px;
     
    
+}
+.logo{
+    width: 250px;
+    height:156px; 
 }
 .menu a{
     text-decoration: none;
     color: black;
+    
     
 }
 .menu a:visited{
@@ -44,7 +50,8 @@
 .menu a:hover{
     color: rgb(238, 42, 245);
     font-size: 18px;
-    font-style: bold;
+    font-weight: bold;
+    
 }
 /*
 .main {
@@ -60,23 +67,37 @@
 .titulo_h4{
     margin-left: 0px;
     text-align: center;
+    font-size: 16px;
+    font-weight: bold;
 }
+
 p{
-    text-indent: 20px;
+    text-indent: 15px;
+    font-size: 14px;
     text-align: left;
 
 }
-
+h3{
+    text-align: center;
+}
+h5{
+    text-align: center;
+}
 /*Container*/
+ div.container{
+    width: 930px;
+} 
+div p_servicos{
+    width: 250px;
+}
 .main {
-    display: block;
+    display: block !important;
     width: 900px;
     height: auto;
-    
 }
 .main img {
     margin: 0px;
-    width: 275px;
+    width: 265px;
     height: 231px;
 }
 .rosa{
@@ -86,12 +107,15 @@ p{
 footer {
     background-color: rgb(247, 76, 213);
     width: 900px;
-    height: auto;
+    height: auto;    
+}
+
+footer p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
     text-align: center;
     padding: 30px;
     font-style: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 16px;
 }
 /*
 .rodape{
@@ -111,11 +135,11 @@ footer {
   
 
 }*/
-
+/*
 .formulario {
     display: inline-block;
 }
-
+*/
 
 /*Login
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');*/
@@ -201,7 +225,6 @@ h4 {
 
 }
 */
-/*
 #form {
     position: relative;
     margin-top: 250px;
@@ -216,19 +239,8 @@ h4 {
     background: #FBFBFB;
     box-shadow: -1px 3px 5px 5px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
-    background-color: red;
-
-}*/
-#form{
-    padding: 40px;
-    width: min-content;
-    border-radius: 30px;
-    box-shadow: -1px 3px 5px 5px rgba(0, 0, 0, 0.25);
-margin-bottom: 50px;;
-color: #2b344b;
 
 }
-
 #form .item{
     position: relative;
     left: 60px;
@@ -271,7 +283,7 @@ color: #2b344b;
 #btn button {
     width: 150px;
     height: 50px;
-        background: #FF5FBF;
+    background: #FF5FBF;
     border-radius: 10px;
     border: none;
 }
@@ -318,52 +330,3 @@ color: #2b344b;
 
 */
 /* links finais */
-/* Responsividade*/
-/*media queries*/
-
-/* Tablet */
-/*
-@media only screen and(max-width: 768px){
-    *{
-    text-align: left;
-    background-color: red;
-    }
- div{
-    width: 49%;
- }
- .main{
-    width: 85%;
- }
- p{
-    text-align: left;
- }
- h1{
-
- }
-}
-
-/* Smartphone */
-/*
-@media only screen and(max-width: 500px){
-    *{
-        text-align: left;
-        background-color: red;
-        }
-     div.menu{
-        flex-direction: column;
-     }
-        div{
-        width: 49%;
-     }
-     .main{
-        width: 85%;
-     }
-     p{
-        text-align: left;
-     }
-     h1{
-    
-     }
-}
-
-*/
