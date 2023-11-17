@@ -42,23 +42,26 @@
     </div>
 
 
-    <div class="container">
+    
+ 
+
+     <div class="index" style="width:900px">
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <%--<ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+           <%-- <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to=""></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to=""></li>
       </ol>--%>
             <div class="carousel-inner" style="height: 25em;">
                 <div class="carousel-item active">
-                    <img src="Imagens/salao_img1.png" class="d-block w-100" alt="imagem carrosel 1">
+                    <img src="Imagens/salao_img1.png" class="d-block w-100" alt="imagem carrosel 1"/>
                 </div>
                 <div class="carousel-item">
-                    <img src="Imagens/salao_img2.png" class="d-block w-100" alt="imagem carrosel 2">
+                    <img src="Imagens/salao_img2.png" class="d-block w-100" alt="imagem carrosel 2"/>
                 </div>
                 <div class="carousel-item">
-                    <img src="Imagens/salao_img3.jpg" class="d-block w-100" alt="imagem carrosel 3">
+                    <img src="Imagens/salao_img3.jpg" class="d-block w-100" alt="imagem carrosel 3"/>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -70,38 +73,41 @@
                 <span class="sr-only">Próximo</span>
             </a>
         </div>
-
     </div>
+       
 
     <div class="main" style="height: 50px;">
     </div>
     <!-- Segunda linha -->
 
-    <h3>Destaques</h3>
+    <h3>Novidades</h3>
     <br/>
-    <div class="tendencias">
+    <div class="destaques">
         <div class="row">
             <div class="col-sm">
-                <h5>Alongamento</h5>
-                <img src="Imagens/alonga.png"/>
+                <h6>Unhas Formais</h6>
+                    <img src="Imagens/unhas_formais.jpeg"/><br /><br />
+                <p>Estilo elegante em cada detalhe. Detalhes refinados que expressam sofisticação e elegância em cada unha.</p>
             </div>
             <div class="col-sm">
                 <div class="col-sm">
-                    <h5>Alongamento</h5>
-                    <img src="Imagens/alonga.png"/>
+                    <h6>Encontros Casuais</h6>
+                    <img src="Imagens/unhas_formais2.jpg"/><br /><br />
+                    <p>Um toque descontraído de charme em cada unha para encontros descontraídos.</p>
                 </div>
             </div>
             <div class="col-sm">
                 <div class="col-sm">
-                    <h5>Alongamento</h5>
-                    <img src="Imagens/alonga.png"/>
+                    <h6>Unha Decorada Preto e Branco</h6>
+                    <img src="Imagens/unha-decorada.jpg"/><br /><br />
+                    <p>Contraste clássico em cada detalhe: unhas decoradas em preto e branco, elegância atemporal.</p>
                 </div>
             </div>
         </div>
     </div>
     <br>
     <br>
-    <h3>Depoimentos</h3>
+    <h3>Destaques</h3>
     <br>
     <div class="destaques">
         <div class="row">

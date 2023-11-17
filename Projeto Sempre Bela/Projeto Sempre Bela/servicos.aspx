@@ -42,7 +42,7 @@
                     <img src="Imagens/manicure_2.png" />
 
                     <div>
-                        <p>Transformando suas unhas em obras de arte, nossa equipe de manicure oferece um serviço excepcional, ressaltando a beleza e elegância das suas mãos. </p>
+                        <p class="servicos">Transformando suas unhas em obras de arte, nossa equipe de manicure oferece um serviço excepcional, ressaltando a beleza e elegância das suas mãos. </p>
                     </div>
                 </div>
                 <div class="col-sm">

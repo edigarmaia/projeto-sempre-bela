@@ -145,7 +145,10 @@
     <Content Include="Imagens\salao_img1.png" />
     <Content Include="Imagens\salao_img2.png" />
     <Content Include="Imagens\salao_img3.jpg" />
+    <Content Include="Imagens\unha-decorada.jpg" />
+    <Content Include="Imagens\unhas_cromadas.png" />
     <Content Include="Imagens\unhas_formais.jpeg" />
+    <Content Include="Imagens\unhas_formais2.jpg" />
     <Content Include="Imagens\unhas_gel.png" />
     <Content Include="index.aspx" />
     <Content Include="JS\scripts.js" />

@@ -78,25 +78,28 @@ h3 {
 
 p {
     text-indent: 20px;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 /*Container*/
-div.container {
-    width: 900px;
-
-}
+/*div.index {*/
+/*    width: 920px;*/
+    /*padding: 0;
+    margin: 0;
+}*/
 
 .main {
     display: block !important;
     width: 900px;
     height: auto;
-}
-.tendencias{
+}   
+
+
+/*.main.cards{
     width: 900px;
     height: auto;
     text-align: center;
-}
+}*/
 
 .destaques {
     width: 900px;
@@ -112,12 +115,15 @@ div.container {
 }
 
 .rosa {
-  /*  background-color: rgb(247, 76, 213);*/
     background: #FF5FBF;
 }
 
 footer p {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    padding: 30px;
+    font-style: bold;
 }
 
 
@@ -126,32 +132,12 @@ footer {
     background: #FF5FBF;
     width: 900px;
     height: auto;
-    font-size: 16px;
-    text-align: center;
-    padding: 15px;
-        /*font-style: bold;*/
     }
 
 
 .label {
     line-height: 45px;
 }
-
-/*#form {
-    position: relative;
-    margin-top: 250px;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    padding: 40px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: min-content;
-    align-items: center;
-    color: #2b344b;
-    background: #FBFBFB;
-    box-shadow: -1px 3px 5px 5px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-}*/
 
 #form {
     padding: 40px;
@@ -198,13 +184,13 @@ footer {
     width: 100%;
     text-align: center;
 }
-    #btn .btn1 {
-        width: 150px;
-        height: 50px;
-        /*  background: #FF5FBF;*/
-        background: #FF5FBF;
-        border-radius: 10px;
-        border: none;
+#btn .btn1 {
+    width: 150px;
+    height: 50px;
+ /*  background: #FF5FBF;*/
+    background: #FF5FBF;
+    border-radius: 10px;
+    border: none;
     }
 
 /* título principal e outros títulos */
@@ -232,21 +218,3 @@ footer {
     font-size: 15px;
     padding-left: 5px;
 }
-
-/*
-.input #confirmarsenha {
-    font-size: 15px;
-    padding-left: 5px;
-}
-*/
-/* botão cadastre-se */
-/**/
-/*#btnLogin .btn1{
-    font-size: 16px;
-    align-items: center;
-    font-weight: bold;
-
-}*/
-
-/**/
-/* links finais */
