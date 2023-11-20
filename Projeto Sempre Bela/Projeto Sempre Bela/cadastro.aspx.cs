@@ -77,14 +77,18 @@ namespace SempreBela
         {
 
             string cpf = txtCpf.Text;
+            string email = txtEmail.Text;
 
             if (UsuariosDao.ValidaCpf(cpf))
             {
-                lblResCpf.Text = "Este CPF já está cadastrado.";
+                MsgErroCpf();
+
+            }else if (UsuariosDao.ValidaEmail(email))
+            {
+                MsgErroEmail();
 
             }
             else { 
-
 
             var usuarioId = UsuariosDao.InserirUsuario(usuarioForm());
             EnderecoDao.InserirEndereco(enderecoForm(usuarioId));
@@ -94,6 +98,21 @@ namespace SempreBela
             }
 
         }
+        private void MsgErroCpf()
+        {
+            string script = "alert('Este CPF já está cadastrado! Altere seu CPF e tente novamente!');";
+            txtCpf.Focus();
+            txtCpf.Text = "";
+            ClientScript.RegisterStartupScript(this.GetType(), "Erro CPF", script, true);
 
+        }
+        private void MsgErroEmail()
+        {
+            string script = "alert('Este e-mail já está cadastrado! Altere seu e-mail e tente novamente!');";           
+            txtEmail.Focus();
+            txtEmail.Text = "";
+            ClientScript.RegisterStartupScript(this.GetType(), "Erro E-mail", script, true);
+
+        }
     }
 }

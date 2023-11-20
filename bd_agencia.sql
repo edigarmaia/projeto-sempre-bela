@@ -20,6 +20,9 @@ CREATE TABLE [dbo].[usuarios](
     PRIMARY KEY CLUSTERED ([idUsuario] ASC),
     FOREIGN KEY ([idTipoUsuario]) REFERENCES [dbo].[tipoUsuarios] ([idTipoUsuario])
 );
+ALTER TABLE usuarios
+ADD CONSTRAINT cpfUnico UNIQUE (cpf);
+
 
 CREATE TABLE [dbo].[enderecos](
 	[idEndereco]  INT	  IDENTITY (1, 1) NOT NULL,

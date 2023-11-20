@@ -10,17 +10,24 @@
     <link rel="stylesheet" href="CSS/estilo.css" />
 
     <%--Bootstrap--%>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
-        rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <!-- Referência para o jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Referência para o jQuery Mask Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+
 </head>
 <body>
 
     <%--Menu--%>
     <div class="menu">
         <nav>
-             <a href="index.aspx">
+            <a href="index.aspx">
                 <img class="logo" src="Imagens/logo_sempre_bela.jpeg" alt="Logo Sempre Bela" /></a>
-           
+
             <ul class="itens-menu">
                 <li><a href="index.aspx">Home</a></li>
                 <li><a href="servicos.aspx">Serviços</a></li>
@@ -35,8 +42,8 @@
     <%--Corpo--%>
     <div class="main">
 
-                  
-                
+
+
         <div class="col-sm">
             <h4 class="titulo_h4">Cadastro</h4>
             <div>
@@ -50,16 +57,26 @@
                         <label for="exampleInputPhone">Telefone</label>
                         <asp:TextBox type="tel" class="form-control form-control-sm" ID="txtTelefone" runat="server"></asp:TextBox>
                     </div>
+
+                    <script>
+                        $(document).ready(function () {
+                            $('#<%= txtTelefone.ClientID %>').mask('(00) 00000-0000');
+                        });
+                    </script>
+
                     <div class="form-group">
                         <label for="e">CPF</label>
                         <asp:TextBox type="text" class="form-control form-control-sm" ID="txtCpf" runat="server"></asp:TextBox>
-                        <asp:Label ID="lblResCpf" runat="server" style="color: red"></asp:Label>
-                     
                     </div>
-
+                    <script>
+                        $(document).ready(function () {
+                            $('#<%= txtCpf.ClientID %>').mask('000.000.000-00');
+                            });
+                    </script>
                     <div class="form-group">
                         <label for="exampleInputEmail1">E-mail</label>
                         <asp:TextBox type="email" class="form-control form-control-sm" ID="txtEmail" runat="server"></asp:TextBox>
+
                     </div>
 
                     <div class="form-group">
@@ -87,6 +104,11 @@
                         <label for="">CEP</label>
                         <asp:TextBox type="text" class="form-control form-control-sm" ID="txtCep" runat="server"></asp:TextBox>
                     </div>
+                    <script>
+                        $(document).ready(function () {
+                            $('#<%= txtCep.ClientID %>').mask('00000-000');
+                        });
+                    </script>
                     <div class="form-group">
                         <label for="">Cidade</label>
                         <asp:TextBox type="text" class="form-control form-control-sm" ID="txtCidade" runat="server"></asp:TextBox>

@@ -88,6 +88,33 @@ namespace Mecanismo.Dao.DaoUsuarios
             }
         }
 
+        // Metodo que valida e-mail já cadastrado
+        public static bool ValidaEmail(string email)
+        {
+            string comandoSql = "SELECT COUNT(*) FROM usuarios WHERE email = @email";
+            using (SqlConnection conexao = Conexao.GetConexao())
+            {
+                using (SqlCommand comando = new SqlCommand(comandoSql, conexao))
+                {
+                    SqlParameter emailUsuario = new SqlParameter("@email", SqlDbType.VarChar, 50);
+                    emailUsuario.Value = email;
+                    comando.Parameters.Add(emailUsuario);
+
+                    try
+                    {
+                        //conexao.Open();
+                        int count = (int)comando.ExecuteScalar();
+                        return count > 0;
+                    }
+                    catch (SqlException ex)
+                    {
+                        throw new Exception("Erro ao validar e-mail: " + ex.Message);
+                    }
+                }
+            }
+
+        }
+
 
         // Método que insere um usuario
         public static int InserirUsuario(Usuario usuario)

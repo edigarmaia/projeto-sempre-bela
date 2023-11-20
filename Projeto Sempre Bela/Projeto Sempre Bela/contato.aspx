@@ -12,6 +12,12 @@
     <%--Bootstrap--%>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <!-- Referência para o jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Referência para o jQuery Mask Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
 </head>
 <body>
     <div class="menu">
@@ -45,7 +51,7 @@
 
     <div class="main">
         <form runat="server">
-            <h4 class="titulo_h4">Fale conosco</h4>
+            <h4 class="titulo_h4">Fale conosco</h4><br />
             <div class="row">
 
                 <div class="form-group">
@@ -67,6 +73,12 @@
     ErrorMessage="O telefone não é válido, digite apenas números com o DDD." Display="Dynamic" ForeColor="Red"
     ValidationExpression="^\d{11}$"></asp:RegularExpressionValidator>
                 </div>
+                <%--  <script>
+                      $(document).ready(function () {
+                          $('#<%= txtTelefone.ClientID %>').mask('(00) 00000-0000');
+      });
+                  </script>--%>
+
 
                 <div class="form-group">
                     <asp:TextBox type="text" class="form-control form-control-sm" ID="txtAssunto" runat="server" placeholder="Assunto"></asp:TextBox>

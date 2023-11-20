@@ -102,7 +102,7 @@
                             <!-- Adicionando um atributo data com o ID do agendamento ao botão -->
                             <%--                            <td id="txtId" runat="server" style="display: none;">'<%="agendamento.IdAgendamento"%>'</td>--%>
 
-                          <%--  <td id="tdIdAgendamento"><%= agendamento.IdAgendamento %></td>--%>
+                           <%-- <td id="tdIdAgendamento"><%= agendamento.IdAgendamento %></td>--%>
                             <td><%=agendamento.Servico.TipoServico%></td>
                             <td><%=agendamento.DataAgendamento.ToShortDateString()%></td>
                             <td><%=agendamento.DataAgendamento.ToString("HH:mm")%></td>
