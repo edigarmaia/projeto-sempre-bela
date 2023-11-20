@@ -1,6 +1,7 @@
 ﻿using SempreBela.DaoClientes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace Mecanismo.Dao.DaoUsuarios
@@ -59,9 +60,39 @@ namespace Mecanismo.Dao.DaoUsuarios
 
         }
 
+
+        // Validar cpf
+        public static bool ValidaCpf(string cpf)
+        {
+            string comandoSql = "SELECT COUNT(*) FROM usuarios WHERE cpf = @cpf";
+            using (SqlConnection conexao = Conexao.GetConexao())
+            {
+                using (SqlCommand comando = new SqlCommand(comandoSql, conexao))
+                {
+                    
+                    SqlParameter cpfUsuario = new SqlParameter("@cpf", SqlDbType.VarChar, 11);
+                    cpfUsuario.Value = cpf;
+                    comando.Parameters.Add(cpfUsuario);
+
+                    try
+                    {
+                        //conexao.Open();
+                        int count = (int)comando.ExecuteScalar();
+                        return count > 0;
+                    }
+                    catch (SqlException ex)
+                    {
+                        throw new Exception("Erro ao validar CPF: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+
         // Método que insere um usuario
         public static int InserirUsuario(Usuario usuario)
         {
+
             // Comando Sql
             string comandoSql = @"INSERT INTO usuarios (nome, telefone, cpf, email, senha, idTipoUsuario) 
                                   VALUES (@nome, @telefone, @cpf, @email, @senha, @tipo); 

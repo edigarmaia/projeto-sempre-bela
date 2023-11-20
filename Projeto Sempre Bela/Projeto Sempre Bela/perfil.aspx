@@ -21,6 +21,17 @@
             return confirm("Tem certeza que deseja excluir este serviço?");
         }
     </script>
+    <script>
+        function capturarValorIdAgendamento(elementoBotao) {
+            var linha = elementoBotao.parentNode.parentNode; // Obtém a linha (tr) que contém o botão clicado
+            var tdIdAgendamento = linha.querySelector("#tdIdAgendamento"); // Encontra o elemento td com o ID tdIdAgendamento
+
+            var valorIdAgendamento = tdIdAgendamento.innerText; // Obtém o valor do IdAgendamento na célula td
+
+            // Utilize o valor do ID do agendamento conforme necessário
+            console.log("Valor do IdAgendamento: ", valorIdAgendamento);
+        }
+    </script>
 
 </head>
 <body>
@@ -72,8 +83,8 @@
                             <th scope="col">Data</th>
                             <th scope="col">Hora</th>
                             <th scope="col">Valor</th>
-                            <th scope="col">Status</th>
-                            <th scope="col"></th>
+                            <%--<th scope="col">Status</th>
+                            <th scope="col"></th>--%>
                         </tr>
                     </thead>
                     <tbody>
@@ -89,27 +100,37 @@
                                     %>
                                 </td>
                             <!-- Adicionando um atributo data com o ID do agendamento ao botão -->
-                                <%--<td id="txtId" runat="server" style="display: none;"><%= Agendamentos%></td>--%>
+                            <%--                            <td id="txtId" runat="server" style="display: none;">'<%="agendamento.IdAgendamento"%>'</td>--%>
 
-
+                          <%--  <td id="tdIdAgendamento"><%= agendamento.IdAgendamento %></td>--%>
                             <td><%=agendamento.Servico.TipoServico%></td>
                             <td><%=agendamento.DataAgendamento.ToShortDateString()%></td>
                             <td><%=agendamento.DataAgendamento.ToString("HH:mm")%></td>
                             <%-- Utilizando CultureInfo para converter um tipo de dado a cultura de uma linguagem específica. 
                                     No caso, está convertendo o valor decimal de origem norte-americana (com .) para o padrão pt-BR (com ,) nas casas decimais --%>
                             <td>R$ <%=agendamento.Servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"))%></td>
-                            <td>
-                                <asp:Label ID="lblStatus" runat="server" Text="Aguardando"></asp:Label>
-                            </td>
 
-                            <td>
-<%--                               <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" 
+
+                            <%--                            <td><asp:Label ID="lblStatus" runat="server" Text="Aguardando"></asp:Label></td>--%>
+
+
+                            <%--                            <td><asp:Label ID="lblIdAgendamento" runat="server" Style="display:none">'<%#Eval("IdAgendamento")%>'</asp:Label></td>--%>
+
+                            <%-- <td><asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" OnClick="btnCancelarAgendamento_Click"/></td>--%>
+
+                            <%--                               <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" 
                                    CommandName="CancelarAgendamento" CommandArgument='<%#Eval("IdAgendamento")%>' OnClick="btnCancelarAgendamento_Click" />--%>
-                                
-                               <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" 
-                                   CommandName="CancelarAgendamento" CommandArgument='<%#Eval("IdAgendamento")%>' OnClick="btnCancelarAgendamento_Click" />
-       
-                            </td>
+
+                            <%--<asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" 
+                                   CommandName="CancelarAgendamento" CommandArgument='<%#Eval("IdAgendamento")%>' OnClick="btnCancelarAgendamento_Click" />--%>
+
+                          <%--  <td>
+                                <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger"
+                                    OnClientClick='<%# "capturarValorIdAgendamento(this)" %>' OnClick="btnCancelarAgendamento_Click" />
+
+                            </td>--%>
+
+
                         </tr>
                         <% } %>
                     </tbody>
@@ -156,8 +177,6 @@
                         <asp:Button ID="btnEditar" runat="server" Text="Editar" class="btn btn-lg btn-primary" OnClick="btnEditar_Click" />
                         <asp:Button ID="btnExcluir" runat="server" Text="Excluir" class="btn btn-lg btn-danger" OnClick="btnExcluir_Click" OnClientClick=" return confirmarExclusao();" />
 
-                        <%--teste--%>
-                        <%--                        <controlstyle cssclass="btnExcluir" />--%>
 
                         <div />
                     </div>

@@ -15,6 +15,7 @@ namespace SempreBela
 {
     public partial class cadastro : System.Web.UI.Page
     {
+ 
         protected void Page_Load(object sender, EventArgs e)
         {
             ////Validação verificando se há valores guardados na sessão. Caso tenha, significa que o usuário está logado, caso não tenha, o usuário é redirecionado para o login. 
@@ -45,19 +46,8 @@ namespace SempreBela
             string email = txtEmail.Text;
             string senha = txtSenha.Text;
 
-            //Usar ternário deixa o código mais legível
+
             int tipo = rbCliente.Checked ? 1 : rbManicure.Checked ? 2 : 0;
-
-            //int tipo = 0;
-            //if (rbCliente.Checked)
-            //{
-            //    tipo = 1;
-            //}
-            //else if(rbManicure.Checked)
-            //{
-            //    tipo = 2;
-            //}
-
 
             Usuario usuario = new Usuario(nome, telefone, cpf, email, senha, tipo);
 
@@ -85,13 +75,25 @@ namespace SempreBela
 
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
-            //Retirei a condicional pq estavam fazendo a mesma coisa.
-            
+
+            string cpf = txtCpf.Text;
+
+            if (UsuariosDao.ValidaCpf(cpf))
+            {
+                lblResCpf.Text = "Este CPF já está cadastrado.";
+
+            }
+            else { 
+
+
             var usuarioId = UsuariosDao.InserirUsuario(usuarioForm());
             EnderecoDao.InserirEndereco(enderecoForm(usuarioId));
             limparDados();
 
             Response.Redirect("perfil.aspx");
+            }
+
         }
+
     }
 }

@@ -328,25 +328,32 @@ namespace SempreBela
 
         protected void btnCancelarAgendamento_Click(object sender, EventArgs e)
         {
-            
-            // Obtém o botão clicado que acionou o evento
-            Button btnCancelarAgendamento = (Button)sender;
-          
-            // Obtém o botão clicado que acionou o evento
-            //Button btnCancelar = (Button)sender;
+            Button btn = (Button)sender;
+            string idAgendamento = btn.CommandArgument;
+            //AgendamentoDao.ExcluirAgendamento(Convert.ToInt32(idAgendamento));
 
-            // Obtém o CommandArgument que contém o ID do agendamento a ser cancelado
-            //string idAgendamento = btnCancelarAgendamento.CommandArgument;
-            string idAgendamento = ((Button)sender).CommandArgument;
-            //btnCancelar.CommandArgument = Agendamento.idAgendamento.ToString(); // Defina o ID do agendamento como CommandArgument
+            //// Obtém o botão clicado que acionou o evento
+            //Button btnCancelarAgendamento = (Button)sender;
+            ////int id = Convert.ToInt32(lblIdAgendamento.ClientID);
 
-            
 
-            AgendamentoDao.ExcluirAgendamento(Convert.ToInt32(idAgendamento));
+            //// Obtém o botão clicado que acionou o evento
 
-            //btnCancelar.OnClientClick = $"return confirmarExclusao('{idAgendamento}')";
-            Response.Redirect("perfil.aspx");
+
+            //// Obtém o CommandArgument que contém o ID do agendamento a ser cancelado
+            ////string idAgendamento = btnCancelarAgendamento.CommandArgument;
+            //string idAgendamento = ((Button)sender).CommandArgument;
+            ////btnCancelar.CommandArgument = Agendamento.idAgendamento.ToString(); // Defina o ID do agendamento como CommandArgument
+            ////btnCancelarAgendamento.Text = idAgendamento;
+
+
+            //AgendamentoDao.ExcluirAgendamento(Convert.ToInt32(idAgendamento));
+
+            ////btnCancelar.OnClientClick = $"return confirmarExclusao('{idAgendamento}')";
+            //Response.Redirect("perfil.aspx");
 
         }
+
+        
     }
     }

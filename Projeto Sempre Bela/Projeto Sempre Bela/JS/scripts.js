@@ -5,3 +5,5 @@
     }
     return false; // Retorna false para evitar o postback se o usuário clicar em "Cancelar" no diálogo de confirmação
 }
+
+function pegarIdAgenda()

@@ -53,6 +53,8 @@
                     <div class="form-group">
                         <label for="e">CPF</label>
                         <asp:TextBox type="text" class="form-control form-control-sm" ID="txtCpf" runat="server"></asp:TextBox>
+                        <asp:Label ID="lblResCpf" runat="server" style="color: red"></asp:Label>
+                     
                     </div>
 
                     <div class="form-group">
