@@ -51,6 +51,7 @@ namespace SempreBela
             }
 
 
+
         }
 
 
@@ -330,6 +331,14 @@ namespace SempreBela
         {
             Button btn = (Button)sender;
             string idAgendamento = btn.CommandArgument;
+
+
+
+            //Button btn = (Button)sender; // Obtém o botão clicado
+            //string idAgendamento = btn.CommandArgument; // Obtém o IdAgendamento associado a esse botão
+            //string idAgendamento = hiddenIdAgendamento.Value;
+
+
             //AgendamentoDao.ExcluirAgendamento(Convert.ToInt32(idAgendamento));
 
             //// Obtém o botão clicado que acionou o evento
@@ -347,13 +356,13 @@ namespace SempreBela
             ////btnCancelarAgendamento.Text = idAgendamento;
 
 
-            //AgendamentoDao.ExcluirAgendamento(Convert.ToInt32(idAgendamento));
+            AgendamentoDao.ExcluirAgendamento(Convert.ToInt32(idAgendamento));
 
             ////btnCancelar.OnClientClick = $"return confirmarExclusao('{idAgendamento}')";
             //Response.Redirect("perfil.aspx");
 
         }
 
-        
+
     }
     }

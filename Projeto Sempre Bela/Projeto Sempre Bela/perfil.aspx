@@ -14,6 +14,10 @@
         rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+
 
     <%--teste js--%>
     <script type="text/javascript">
@@ -21,7 +25,7 @@
             return confirm("Tem certeza que deseja excluir este serviço?");
         }
     </script>
-    <script>
+    <%-- <script>
         function capturarValorIdAgendamento(elementoBotao) {
             var linha = elementoBotao.parentNode.parentNode; // Obtém a linha (tr) que contém o botão clicado
             var tdIdAgendamento = linha.querySelector("#tdIdAgendamento"); // Encontra o elemento td com o ID tdIdAgendamento
@@ -31,8 +35,7 @@
             // Utilize o valor do ID do agendamento conforme necessário
             console.log("Valor do IdAgendamento: ", valorIdAgendamento);
         }
-    </script>
-
+    </script>--%>
 </head>
 <body>
 
@@ -100,9 +103,17 @@
                                     %>
                                 </td>
                             <!-- Adicionando um atributo data com o ID do agendamento ao botão -->
-                            <%--                            <td id="txtId" runat="server" style="display: none;">'<%="agendamento.IdAgendamento"%>'</td>--%>
+                            
+                            <%--<td id="txtId" runat="server" style="display: ;">'<%="agendamento.IdAgendamento"%></td>--%>
 
-                           <%-- <td id="tdIdAgendamento"><%= agendamento.IdAgendamento %></td>--%>
+                    <%--        <td id="tdIdAgendamento" runat="server" style="display:none" data-id="tdIdAgendamento">Id</td>--%>
+
+                            <%--<td id="tdIdAgendamento" runat="server" style="display:none" class="tdIdAgendamento" data-id='<%=agendamento.IdAgendamento%>'></td>--%>
+
+
+
+                            <%--<td id="tdIdAgendamento" style="display:none" ><%=agendamento.IdAgendamento%></td>--%>
+
                             <td><%=agendamento.Servico.TipoServico%></td>
                             <td><%=agendamento.DataAgendamento.ToShortDateString()%></td>
                             <td><%=agendamento.DataAgendamento.ToString("HH:mm")%></td>
@@ -110,6 +121,8 @@
                                     No caso, está convertendo o valor decimal de origem norte-americana (com .) para o padrão pt-BR (com ,) nas casas decimais --%>
                             <td>R$ <%=agendamento.Servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"))%></td>
 
+
+                            <%--TENTATIVAS DE PEGAR O ID --%>
 
                             <%--                            <td><asp:Label ID="lblStatus" runat="server" Text="Aguardando"></asp:Label></td>--%>
 
@@ -124,13 +137,38 @@
                             <%--<asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" 
                                    CommandName="CancelarAgendamento" CommandArgument='<%#Eval("IdAgendamento")%>' OnClick="btnCancelarAgendamento_Click" />--%>
 
-                          <%--  <td>
-                                <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger"
-                                    OnClientClick='<%# "capturarValorIdAgendamento(this)" %>' OnClick="btnCancelarAgendamento_Click" />
+                              <td>
+                               <%-- <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger"
+                                    OnClick="btnCancelarAgendamento_Click" />--%>
 
-                            </td>--%>
+      <%--                            <asp:Button ID="Button1" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger"
+    OnClick="btnCancelarAgendamento_Click" CommandArgument='<%# Eval("IdAgendamento") %>' />
 
 
+                                  <asp:Button ID="btnExemplo" runat="server" Text="Clique Aqui" OnClick="btnCancelarAgendamento_Click" />
+<%--                  --%>                                                                       <%-- <asp:HiddenField ID="hiddenFieldIdAgendamento" runat="server" />--%>
+<%--<asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger btnCancel" 
+    OnClientClick="capturarIdAgendamento('<%= agendamento.IdAgendamento %>');" OnClick="btnCancelarAgendamento_Click1" />--%>
+
+<%--<asp:HiddenField ID="hiddenIdAgendamento" runat="server" />--%>
+                              <%--    <asp:Button ID="Button1" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" OnClick="btnCancelarAgendamento_Click" 
+                                      CommandArgument='txtId' />--%>
+
+
+<%--                                  <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" 
+                                      OnClick="btnCancelarAgendamento_Click" CommandArgument='<%# agendamento.IdAgendamento %>' />--%>
+
+
+
+<%--                                  <script>
+                                      $(document).ready(function () {
+                                          var nomeTextBox = $('#<%= tdIdAgendamento.ClientID %>'); // Acesso ao TextBox pelo ClientID
+                                          nomeTextBox.val('Novo Valor'); // Definir um novo valor no TextBox
+                                      });
+
+                                  </script>--%>
+
+                            </td>
                         </tr>
                         <% } %>
                     </tbody>
