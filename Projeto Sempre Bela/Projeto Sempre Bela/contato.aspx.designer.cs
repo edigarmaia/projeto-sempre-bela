@@ -60,13 +60,13 @@ namespace SempreBela
         protected global::System.Web.UI.WebControls.TextBox txtTelefone;
 
         /// <summary>
-        /// revTelefone control.
+        /// regexTelefone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revTelefone;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexTelefone;
 
         /// <summary>
         /// txtAssunto control.

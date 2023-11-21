@@ -329,8 +329,12 @@ namespace SempreBela
 
         protected void btnCancelarAgendamento_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            string idAgendamento = btn.CommandArgument;
+
+            //int idAgendamento = Convert.ToInt32(idAgendamentoHiddenField.Value);
+
+            //int valorIdAgendamento = 0; 
+            //Button btn = (Button)sender;
+            //string idAgendamento = btn.CommandArgument;
 
 
 
@@ -356,7 +360,7 @@ namespace SempreBela
             ////btnCancelarAgendamento.Text = idAgendamento;
 
 
-            AgendamentoDao.ExcluirAgendamento(Convert.ToInt32(idAgendamento));
+            //AgendamentoDao.ExcluirAgendamento(Convert.ToInt32(idAgendamento));
 
             ////btnCancelar.OnClientClick = $"return confirmarExclusao('{idAgendamento}')";
             //Response.Redirect("perfil.aspx");

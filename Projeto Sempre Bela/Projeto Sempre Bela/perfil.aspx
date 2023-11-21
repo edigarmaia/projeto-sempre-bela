@@ -14,28 +14,32 @@
         rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+ <%--   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>--%>
 
 
 
     <%--teste js--%>
-    <script type="text/javascript">
+    <link type="text/javascript" rel="JS/scripts.js" />
+
+    <%--<script type="text/javascript">
         function confirmarExclusao() {
             return confirm("Tem certeza que deseja excluir este serviço?");
-        }
-    </script>
-    <%-- <script>
-        function capturarValorIdAgendamento(elementoBotao) {
-            var linha = elementoBotao.parentNode.parentNode; // Obtém a linha (tr) que contém o botão clicado
-            var tdIdAgendamento = linha.querySelector("#tdIdAgendamento"); // Encontra o elemento td com o ID tdIdAgendamento
+        }--%>
 
-            var valorIdAgendamento = tdIdAgendamento.innerText; // Obtém o valor do IdAgendamento na célula td
+        <%--// Pegar o id do agendamento
+            function capturarValorIdAgendamento(elementoBotao) {
+                                         var linha = elementoBotao.parentNode.parentNode;
+            var tdIdAgendamento = linha.querySelector("#tdIdAgendamento");
+            var valorIdAgendamento = tdIdAgendamento.innerText;
 
-            // Utilize o valor do ID do agendamento conforme necessário
-            console.log("Valor do IdAgendamento: ", valorIdAgendamento);
-        }
+                console.log("Valor do IdAgendamento: ", valorIdAgendamento);
+
+                document.getElementById('<%= idAgendamentoHiddenField.ClientID %>').value = valorIdAgendamento;
+
+                                     }
     </script>--%>
+
 </head>
 <body>
 
@@ -106,7 +110,8 @@
                             
                             <%--<td id="txtId" runat="server" style="display: ;">'<%="agendamento.IdAgendamento"%></td>--%>
 
-                    <%--        <td id="tdIdAgendamento" runat="server" style="display:none" data-id="tdIdAgendamento">Id</td>--%>
+                            <td id="tdIdAgendamento" runat="server" style="display:none" data-id="tdIdAgendamento">Id</td>
+
 
                             <%--<td id="tdIdAgendamento" runat="server" style="display:none" class="tdIdAgendamento" data-id='<%=agendamento.IdAgendamento%>'></td>--%>
 
@@ -123,6 +128,8 @@
 
 
                             <%--TENTATIVAS DE PEGAR O ID --%>
+
+                            <td><asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" OnClick="btnCancelarAgendamento_Click"/></td>
 
                             <%--                            <td><asp:Label ID="lblStatus" runat="server" Text="Aguardando"></asp:Label></td>--%>
 
@@ -227,6 +234,10 @@
     <footer>
         <p>&copy2023 Sempre Bela - Todos os Direitos Reservados!</p>
     </footer>
+
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
 </body>
 
 </html>

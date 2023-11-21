@@ -51,7 +51,8 @@
 
     <div class="main">
         <form runat="server">
-            <h4 class="titulo_h4">Fale conosco</h4><br />
+            <h4 class="titulo_h4">Fale conosco</h4>
+            <br />
             <div class="row">
 
                 <div class="form-group">
@@ -62,28 +63,32 @@
 
                 <div class="form-group">
                     <asp:TextBox type="email" class="form-control form-control-sm" ID="txtEmail" runat="server" placeholder="E-mail" TextMode="Email"></asp:TextBox><br />
-<asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" 
-    ErrorMessage="O e-mail não é válido." Display="Dynamic" ForeColor="Red"
-    ValidationExpression="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail"
+                        ErrorMessage="O e-mail não é válido." Display="Dynamic" ForeColor="Red"
+                        ValidationExpression="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"></asp:RegularExpressionValidator>
                 </div>
 
                 <div class="form-group">
                     <asp:TextBox type="text" class="form-control form-control-sm" ID="txtTelefone" runat="server" placeholder="Telefone"></asp:TextBox><br />
-                    <asp:RegularExpressionValidator ID="revTelefone" runat="server" ControlToValidate="txtTelefone" 
-    ErrorMessage="O telefone não é válido, digite apenas números com o DDD." Display="Dynamic" ForeColor="Red"
-    ValidationExpression="^\d{11}$"></asp:RegularExpressionValidator>
+
+                    <asp:RegularExpressionValidator ID="regexTelefone" runat="server"
+                        ControlToValidate="txtTelefone"
+                        ErrorMessage="Telefone inválido. Use o formato (00) 00000-0000" Display="Dynamic" ForeColor="Red"
+                        ValidationExpression="^\(\d{2}\)\s\d{5}-\d{4}$">
+                    </asp:RegularExpressionValidator>
+
                 </div>
-                <%--  <script>
-                      $(document).ready(function () {
-                          $('#<%= txtTelefone.ClientID %>').mask('(00) 00000-0000');
-      });
-                  </script>--%>
+                <script>
+                    $(document).ready(function () {
+                        $('#<%= txtTelefone.ClientID %>').mask('(00) 00000-0000');
+                      });
+                </script>
 
 
                 <div class="form-group">
                     <asp:TextBox type="text" class="form-control form-control-sm" ID="txtAssunto" runat="server" placeholder="Assunto"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtAssunto" 
-    ErrorMessage="O campo assunto é obrigatório." Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtAssunto"
+                        ErrorMessage="O campo assunto é obrigatório." Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
             </div>
 
@@ -91,17 +96,13 @@
             <div class="form-group">
                 <label for="txtMensagem"></label>
                 <asp:TextBox type="text" class="form-control form-control-sm" ID="txtMensagem" cols="20" Rows="4" TextMode="MultiLine" runat="server" placeholder="Digite sua mensagem"></asp:TextBox>
-               <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtMensagem" 
-    ErrorMessage="O campo mensagem é obrigatório." Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-                </div>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtMensagem"
+                    ErrorMessage="O campo mensagem é obrigatório." Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+            </div>
 
             <br />
 
-           <%-- <p id="msgSucesso" style="color: rgb(0, 128, 0); text-align: center" visible="false" runat="server">Mensagem enviada com sucesso!</p>
-            <p id="msgErro" style="color: rgb(200, 0, 0); text-align: center" visible="false" runat="server">Preenchimento obrigatório!</p>--%>
-
-            <asp:Button ID="btnEnviar" type="button" class="btn btn-lg btn-block w-100" runat="server" Style="background-color: #FF5FBF;
-;" Text="Enviar" OnClick="btnEnviar_Click" />
+            <asp:Button ID="btnEnviar" type="button" class="btn btn-lg btn-block w-100" runat="server" Style="background-color: #FF5FBF;" Text="Enviar" OnClick="btnEnviar_Click" />
 
             <br />
         </form>
