@@ -50,7 +50,7 @@
 
 
     <div class="main">
-        <form runat="server">
+        <form runat="server" action="https://formsubmit.co/507f677a0ae744dbf5c231affae53a49" method="POST">
             <h4 class="titulo_h4">Fale conosco</h4>
             <br />
             <div class="row">
@@ -105,6 +105,12 @@
             <asp:Button ID="btnEnviar" type="button" class="btn btn-lg btn-block w-100" runat="server" Style="background-color: #FF5FBF;" Text="Enviar" OnClick="btnEnviar_Click" />
 
             <br />
+
+            <input type="hidden" name="_next" value="https://localhost:44376/retornoForm.html"/>
+            <input type="hidden" name="_captcha" value="false"/>
+
+
+
         </form>
     </div>
     <br />

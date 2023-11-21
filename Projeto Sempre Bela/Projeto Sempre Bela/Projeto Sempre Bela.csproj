@@ -154,6 +154,7 @@
     <Content Include="JS\scripts.js" />
     <Content Include="login.aspx" />
     <Content Include="perfil.aspx" />
+    <Content Include="retornoForm.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
