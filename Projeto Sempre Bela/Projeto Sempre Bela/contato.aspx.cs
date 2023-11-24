@@ -14,14 +14,14 @@ namespace SempreBela
         {
 
         }
-        private void limparDados()
-        {
-            txtNome.Text = "";
-            txtTelefone.Text = "";
-            txtEmail.Text = "";
-            txtAssunto.Text = "";
-            txtMensagem.Text = "";
-        }
+        //private void limparDados()
+        //{
+        //    txtNome.Text = "";
+        //    txtTelefone.Text = "";
+        //    txtEmail.Text = "";
+        //    txtAssunto.Text = "";
+        //    txtMensagem.Text = "";
+        //}
       
 
         protected void btnEnviar_Click(object sender, EventArgs e)
@@ -30,8 +30,8 @@ namespace SempreBela
 
             //if((txtNome.Text != null) && (txtEmail.Text != null) && (txtTelefone.Text != null) && (txtAssunto.Text != null) && (txtMensagem.Text != null))
             //{
-            limparDados();
-            MsgEnviadoSucesso();
+            //limparDados();
+            //MsgEnviadoSucesso();
             //msgSucesso.Visible = true;
             //}
             //else
@@ -43,11 +43,11 @@ namespace SempreBela
 
 
         }
-        private void MsgEnviadoSucesso()
-        {
-            string script = "alert('Mensagem enviada com sucesso!');";
-            ClientScript.RegisterStartupScript(this.GetType(), "MsgEnviadoSucesso", script, true);
+        //private void MsgEnviadoSucesso()
+        //{
+        //    string script = "alert('Mensagem enviada com sucesso!');";
+        //    ClientScript.RegisterStartupScript(this.GetType(), "MsgEnviadoSucesso", script, true);
 
-        }
+        //}
     }
 }

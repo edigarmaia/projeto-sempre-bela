@@ -40,19 +40,21 @@ namespace SempreBela
         }
         private Usuario usuarioForm()
         {
-            string nome = txtNome.Text;
-            string telefone = txtTelefone.Text;
-            string cpf = txtCpf.Text;
-            string email = txtEmail.Text;
-            string senha = txtSenha.Text;
+           
+            string nome = txtNome.Text.Trim();
+            string telefone = txtTelefone.Text.Trim();
+            string cpf = txtCpf.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            string senha = txtSenha.Text.Trim();
 
 
             int tipo = rbCliente.Checked ? 1 : rbManicure.Checked ? 2 : 0;
 
             Usuario usuario = new Usuario(nome, telefone, cpf, email, senha, tipo);
 
-
             return usuario;
+
+
         }
 
 
@@ -75,6 +77,7 @@ namespace SempreBela
 
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
+            
 
             string cpf = txtCpf.Text;
             string email = txtEmail.Text;

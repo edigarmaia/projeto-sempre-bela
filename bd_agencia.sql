@@ -20,8 +20,7 @@ CREATE TABLE [dbo].[usuarios](
     PRIMARY KEY CLUSTERED ([idUsuario] ASC),
     FOREIGN KEY ([idTipoUsuario]) REFERENCES [dbo].[tipoUsuarios] ([idTipoUsuario])
 );
-ALTER TABLE usuarios
-ADD CONSTRAINT cpfUnico UNIQUE (cpf);
+-- ALTER TABLE usuarios ADD CONSTRAINT cpfUnico UNIQUE (cpf);
 
 
 CREATE TABLE [dbo].[enderecos](
@@ -60,11 +59,12 @@ CREATE TABLE [dbo].[agendamento] (
     FOREIGN KEY ([idCliente]) REFERENCES [dbo].[usuarios] ([idUsuario])
 );
 DELETE FROM agendamento WHERE idAgendamento BETWEEN 7 AND 11;
-
-
+DELETE FROM usuarios WHERE idUsuario = 12;
+DELETE FROM enderecos WHERE idEndereco = 7;
 
 SELECT * FROM usuarios;
 SELECT * FROM tipoUsuarios;
 SELECT * FROM servicos;
 SELECT * FROM agendamento;
+SELECT * FROM enderecos;
 

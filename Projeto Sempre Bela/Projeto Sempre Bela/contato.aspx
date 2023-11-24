@@ -57,26 +57,21 @@
 
                 <div class="form-group">
                     <asp:TextBox type="text" class="form-control form-control-sm" ID="txtNome" runat="server" placeholder="Nome"></asp:TextBox><br />
-                    <asp:RequiredFieldValidator ID="rfvNome" runat="server" ControlToValidate="txtNome"
-                        ErrorMessage="O campo nome é obrigatório." Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvNome" runat="server" ControlToValidate="txtNome" ErrorMessage="O campo nome é obrigatório." 
+                        Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
 
                 <div class="form-group">
                     <asp:TextBox type="email" class="form-control form-control-sm" ID="txtEmail" runat="server" placeholder="E-mail" TextMode="Email"></asp:TextBox><br />
-                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail"
-                        ErrorMessage="O e-mail não é válido." Display="Dynamic" ForeColor="Red"
+                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="O e-mail não é válido." Display="Dynamic" ForeColor="Red"
                         ValidationExpression="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"></asp:RegularExpressionValidator>
                 </div>
 
                 <div class="form-group">
                     <asp:TextBox type="text" class="form-control form-control-sm" ID="txtTelefone" runat="server" placeholder="Telefone"></asp:TextBox><br />
-
-                    <asp:RegularExpressionValidator ID="regexTelefone" runat="server"
-                        ControlToValidate="txtTelefone"
-                        ErrorMessage="Telefone inválido. Use o formato (00) 00000-0000" Display="Dynamic" ForeColor="Red"
-                        ValidationExpression="^\(\d{2}\)\s\d{5}-\d{4}$">
+                    <asp:RegularExpressionValidator ID="regexTelefone" runat="server" ControlToValidate="txtTelefone" ErrorMessage="Telefone inválido. Use o formato (00) 00000-0000" 
+                        Display="Dynamic" ForeColor="Red" ValidationExpression="^\(\d{2}\)\s\d{5}-\d{4}$">
                     </asp:RegularExpressionValidator>
-
                 </div>
                 <script>
                     $(document).ready(function () {
@@ -102,7 +97,7 @@
 
             <br />
 
-            <asp:Button ID="btnEnviar" type="button" class="btn btn-lg btn-block w-100" runat="server" Style="background-color: #FF5FBF;" Text="Enviar" OnClick="btnEnviar_Click" />
+            <asp:Button ID="btnEnviar" type="button" class="btn btn-lg btn-block w-100" runat="server" Style="background-color: #FF5FBF;" Text="Enviar"/>
 
             <br />
 

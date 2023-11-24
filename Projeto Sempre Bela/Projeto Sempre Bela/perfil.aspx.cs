@@ -1,12 +1,15 @@
 ﻿using Mecanismo.Dao;
 using Mecanismo.Dao.DaoAgendamento;
 using Mecanismo.Dao.DaoServicos;
+using Mecanismo.Dao.DaoUsuarios;
 using Mecanismo.Enums;
 using SempreBela.Dao.DaoAgendamento;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Web.Optimization;
 using System.Web.Security;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -43,17 +46,14 @@ namespace SempreBela
                 // Limpar o ListBox antes de adicionar os itens
                 lbxServicos.Items.Clear();
 
-                // Adicionar os itens da lista de serviços ao ListBox
+                //Adicionar os itens da lista de serviços ao ListBox
                 foreach (Servico servico in servicos)
                 {
                     lbxServicos.Items.Add(new ListItem(servico.TipoServico, servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"))));
                 }
             }
 
-
-
         }
-
 
         protected void lbxServicos_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -71,7 +71,10 @@ namespace SempreBela
                 // Define o valor do serviço no TextBox txtValor
                 txtValorServico.Text = selectedItem.Value;
             }
+
         }
+
+
 
         private void limparDados()
         {
@@ -93,6 +96,8 @@ namespace SempreBela
         }
 
 
+
+        // Após inserir um novo serviço com sucesso, esta função para atualiza o ListBox
         // Após inserir um novo serviço com sucesso, esta função para atualiza o ListBox
         private void AtualizarListBox()
         {
@@ -111,6 +116,7 @@ namespace SempreBela
             //msgSucesso.Visible = false;
         }
 
+
         // Inserir serviço
         protected void btnInserir_Click(object sender, EventArgs e)
         {
@@ -122,7 +128,6 @@ namespace SempreBela
         // Editar serviço
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-
             //try
             //{
             ServicosDao servicosDao = new ServicosDao();
@@ -143,17 +148,15 @@ namespace SempreBela
 
                 // Lógica adicional após a atualização, se necessário
 
-                Response.Write("Atualização bem-sucedida!");
+                Response.Write("");
             }
             else
             {
-                Response.Write("Serviço não encontrado.");
+                Response.Write("x''");
             }
 
+
         }
-
-
-
 
         // Logout
         protected void btnSair_Click1(object sender, EventArgs e)
@@ -168,46 +171,10 @@ namespace SempreBela
         // Excluir um serviço
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
-            //string tipo = txtNomeServico.Text;
-
-            //// Tenta excluir o serviço
-            //bool exclusaoBemSucedida = ServicosDao.ExcluirServico(tipo);
-
-            //if (exclusaoBemSucedida)
-            //{
-            //    AtualizarListBox();
-            //    limparDados();
-            //    msgSucesso.Visible = true;
-            //}
-            //else
-            //{
-            //    msgErro.Visible = true;
-
-            //}
-            ////ServicosDao.ExcluirServico(tipo);
-            ////AtualizarListBox();
-            ////limparDados();
-            ///
-            //try
-            //{
-            //    MsgExcluido();
-            //    string tipo = txtNomeServico.Text;
-            //    ServicosDao.ExcluirServico(tipo);
-            //    AtualizarListBox();
-            //    limparDados();
-
-
-            //}
-            //catch(Exception ex) 
-            //{
-            //    msgSucesso.Visible = false;
-            //    msgErro.Visible = true;
-
-            //}
 
             try
             {
-                string tipo = txtNomeServico.Text;
+                string tipo = txtNomeServico.Text.Trim();
 
 
                 // Realiza a exclusão
@@ -217,7 +184,7 @@ namespace SempreBela
                 limparDados();
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MsgErro();
 
@@ -238,15 +205,6 @@ namespace SempreBela
             ClientScript.RegisterStartupScript(this.GetType(), "MsgExcluido", script, true);
 
         }
-
-        //protected void btnStatus_Click(object sender, EventArgs e)
-        //{
-        //    lblStatus.Text = "Cancelado";
-        //    lblStatus.ForeColor = System.Drawing.Color.Red;
-        //    btnStatus.ForeColor = System.Drawing.Color.Red; 
-        //    btnStatus.Visible = false;
-        //}
-
 
 
         // Excluir um agendamento
@@ -330,43 +288,8 @@ namespace SempreBela
         protected void btnCancelarAgendamento_Click(object sender, EventArgs e)
         {
 
-            //int idAgendamento = Convert.ToInt32(idAgendamentoHiddenField.Value);
-
-            //int valorIdAgendamento = 0; 
-            //Button btn = (Button)sender;
-            //string idAgendamento = btn.CommandArgument;
-
-
-
-            //Button btn = (Button)sender; // Obtém o botão clicado
-            //string idAgendamento = btn.CommandArgument; // Obtém o IdAgendamento associado a esse botão
-            //string idAgendamento = hiddenIdAgendamento.Value;
-
-
-            //AgendamentoDao.ExcluirAgendamento(Convert.ToInt32(idAgendamento));
-
-            //// Obtém o botão clicado que acionou o evento
-            //Button btnCancelarAgendamento = (Button)sender;
-            ////int id = Convert.ToInt32(lblIdAgendamento.ClientID);
-
-
-            //// Obtém o botão clicado que acionou o evento
-
-
-            //// Obtém o CommandArgument que contém o ID do agendamento a ser cancelado
-            ////string idAgendamento = btnCancelarAgendamento.CommandArgument;
-            //string idAgendamento = ((Button)sender).CommandArgument;
-            ////btnCancelar.CommandArgument = Agendamento.idAgendamento.ToString(); // Defina o ID do agendamento como CommandArgument
-            ////btnCancelarAgendamento.Text = idAgendamento;
-
-
-            //AgendamentoDao.ExcluirAgendamento(Convert.ToInt32(idAgendamento));
-
-            ////btnCancelar.OnClientClick = $"return confirmarExclusao('{idAgendamento}')";
-            //Response.Redirect("perfil.aspx");
-
         }
 
-
     }
-    }
+    
+}

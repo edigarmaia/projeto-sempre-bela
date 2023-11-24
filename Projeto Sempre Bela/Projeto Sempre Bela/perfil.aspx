@@ -14,33 +14,22 @@
         rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
 
- <%--   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <%--   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>--%>
 
 
 
     <%--teste js--%>
-    <link type="text/javascript" rel="JS/scripts.js" />
+    <%--    <link type="text/javascript" rel="JS/scripts.js" />--%>
 
-    <%--<script type="text/javascript">
+    <script type="text/javascript">
         function confirmarExclusao() {
             return confirm("Tem certeza que deseja excluir este serviço?");
-        }--%>
+        }
 
-        <%--// Pegar o id do agendamento
-            function capturarValorIdAgendamento(elementoBotao) {
-                                         var linha = elementoBotao.parentNode.parentNode;
-            var tdIdAgendamento = linha.querySelector("#tdIdAgendamento");
-            var valorIdAgendamento = tdIdAgendamento.innerText;
+    </script>
+    </head>
 
-                console.log("Valor do IdAgendamento: ", valorIdAgendamento);
-
-                document.getElementById('<%= idAgendamentoHiddenField.ClientID %>').value = valorIdAgendamento;
-
-                                     }
-    </script>--%>
-
-</head>
 <body>
 
 
@@ -90,8 +79,6 @@
                             <th scope="col">Data</th>
                             <th scope="col">Hora</th>
                             <th scope="col">Valor</th>
-                            <%--<th scope="col">Status</th>
-                            <th scope="col"></th>--%>
                         </tr>
                     </thead>
                     <tbody>
@@ -106,19 +93,8 @@
                                           agendamento.Manicure.Nome : agendamento.Cliente.Nome 
                                     %>
                                 </td>
-                            <!-- Adicionando um atributo data com o ID do agendamento ao botão -->
-                            
-                            <%--<td id="txtId" runat="server" style="display: ;">'<%="agendamento.IdAgendamento"%></td>--%>
 
-                            <td id="tdIdAgendamento" runat="server" style="display:none" data-id="tdIdAgendamento">Id</td>
-
-
-                            <%--<td id="tdIdAgendamento" runat="server" style="display:none" class="tdIdAgendamento" data-id='<%=agendamento.IdAgendamento%>'></td>--%>
-
-
-
-                            <%--<td id="tdIdAgendamento" style="display:none" ><%=agendamento.IdAgendamento%></td>--%>
-
+                            <%--<td id="tdIdAgendamento" runat="server" style="display:none" data-id="tdIdAgendamento">Id</td>--%>
                             <td><%=agendamento.Servico.TipoServico%></td>
                             <td><%=agendamento.DataAgendamento.ToShortDateString()%></td>
                             <td><%=agendamento.DataAgendamento.ToString("HH:mm")%></td>
@@ -127,55 +103,9 @@
                             <td>R$ <%=agendamento.Servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"))%></td>
 
 
-                            <%--TENTATIVAS DE PEGAR O ID --%>
+                            <td>
+                                <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" OnClick="btnCancelarAgendamento_Click" /></td>
 
-                            <td><asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" OnClick="btnCancelarAgendamento_Click"/></td>
-
-                            <%--                            <td><asp:Label ID="lblStatus" runat="server" Text="Aguardando"></asp:Label></td>--%>
-
-
-                            <%--                            <td><asp:Label ID="lblIdAgendamento" runat="server" Style="display:none">'<%#Eval("IdAgendamento")%>'</asp:Label></td>--%>
-
-                            <%-- <td><asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" OnClick="btnCancelarAgendamento_Click"/></td>--%>
-
-                            <%--                               <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" 
-                                   CommandName="CancelarAgendamento" CommandArgument='<%#Eval("IdAgendamento")%>' OnClick="btnCancelarAgendamento_Click" />--%>
-
-                            <%--<asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" 
-                                   CommandName="CancelarAgendamento" CommandArgument='<%#Eval("IdAgendamento")%>' OnClick="btnCancelarAgendamento_Click" />--%>
-
-                              <td>
-                               <%-- <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger"
-                                    OnClick="btnCancelarAgendamento_Click" />--%>
-
-      <%--                            <asp:Button ID="Button1" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger"
-    OnClick="btnCancelarAgendamento_Click" CommandArgument='<%# Eval("IdAgendamento") %>' />
-
-
-                                  <asp:Button ID="btnExemplo" runat="server" Text="Clique Aqui" OnClick="btnCancelarAgendamento_Click" />
-<%--                  --%>                                                                       <%-- <asp:HiddenField ID="hiddenFieldIdAgendamento" runat="server" />--%>
-<%--<asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger btnCancel" 
-    OnClientClick="capturarIdAgendamento('<%= agendamento.IdAgendamento %>');" OnClick="btnCancelarAgendamento_Click1" />--%>
-
-<%--<asp:HiddenField ID="hiddenIdAgendamento" runat="server" />--%>
-                              <%--    <asp:Button ID="Button1" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" OnClick="btnCancelarAgendamento_Click" 
-                                      CommandArgument='txtId' />--%>
-
-
-<%--                                  <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" 
-                                      OnClick="btnCancelarAgendamento_Click" CommandArgument='<%# agendamento.IdAgendamento %>' />--%>
-
-
-
-<%--                                  <script>
-                                      $(document).ready(function () {
-                                          var nomeTextBox = $('#<%= tdIdAgendamento.ClientID %>'); // Acesso ao TextBox pelo ClientID
-                                          nomeTextBox.val('Novo Valor'); // Definir um novo valor no TextBox
-                                      });
-
-                                  </script>--%>
-
-                            </td>
                         </tr>
                         <% } %>
                     </tbody>
@@ -186,8 +116,6 @@
                 <div>
                     <p>
                         <asp:Button ID="btnSair" runat="server" Value="Sair" Text="Sair" class="btn btn-outline-danger" OnClick="btnSair_Click1" />
-                        <asp:Button ID="btnAlterarDados" runat="server" Value="Alterar" Text="Alterar" class="btn btn-outline-primary" />
-
                     </p>
 
 
@@ -199,9 +127,15 @@
                         <asp:ListBox ID="lbxServicos" runat="server" Width="400px" AutoPostBack="true" OnSelectedIndexChanged="lbxServicos_SelectedIndexChanged"></asp:ListBox>
                     </p>
 
-                    <%--                    <p id="msgSucesso" style="color: rgb(0, 128, 0); text-align: center" visible="false" runat="server">Serviço excluído com sucesso!</p>--%>
-                    <p id="msgErro" style="color: rgb(200, 0, 0);" visible="false" runat="server">Cancelado</p>
+                    <p id="msgSucesso" style="color: rgb(0, 128, 0); text-align: center" visible="false" runat="server">Serviço excluído com sucesso!</p>
+                    <p id="msgErro" style="color: rgb(200, 0, 0); text-align: center" visible="false" runat="server">Não é possível excluir o serviço devido a agendamentos associados!</p>
+
                     <div class="form-group">
+                        <%--                        testar campo id oculto--%>
+                        <%--                        <input type="hidden" id="lblIdServico" runat="server" />--%>
+<%--                        <asp:Label ID="lblIdServico" runat="server" Text="ID"></asp:Label>--%>
+
+<%--                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtIdServico" runat="server"></asp:TextBox>--%>
                         <label for="">Nome Serviço</label>
                         <asp:TextBox type="text" class="form-control form-control-sm" ID="txtNomeServico" runat="server" placeholder="manicure"></asp:TextBox>
                         <%--<asp:RequiredFieldValidator ID="rfvNomeServico" runat="server" ControlToValidate="txtNomeServico"
@@ -220,8 +154,8 @@
                     <div>
                         <asp:Button ID="btnInserir" runat="server" Text="Inserir" class="btn btn-lg btn-success" OnClick="btnInserir_Click" />
                         <asp:Button ID="btnEditar" runat="server" Text="Editar" class="btn btn-lg btn-primary" OnClick="btnEditar_Click" />
-                        <asp:Button ID="btnExcluir" runat="server" Text="Excluir" class="btn btn-lg btn-danger" OnClick="btnExcluir_Click" OnClientClick=" return confirmarExclusao();" />
-
+                        <asp:Button ID="btnExcluir" runat="server" Text="Excluir" class="btn btn-lg btn-danger" OnClick="btnExcluir_Click"
+                            OnClientClick=" return confirmarExclusao();" />
 
                         <div />
                     </div>
@@ -235,8 +169,8 @@
         <p>&copy2023 Sempre Bela - Todos os Direitos Reservados!</p>
     </footer>
 
-       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
 </body>
 

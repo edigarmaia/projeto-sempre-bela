@@ -33,6 +33,15 @@ namespace SempreBela
         protected global::System.Web.UI.WebControls.TextBox txtTelefone;
 
         /// <summary>
+        /// regexTelefone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexTelefone;
+
+        /// <summary>
         /// txtCpf control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace SempreBela
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCpf;
+
+        /// <summary>
+        /// regexCPF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexCPF;
 
         /// <summary>
         /// txtEmail control.
@@ -51,6 +69,15 @@ namespace SempreBela
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
+        /// revEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
+
+        /// <summary>
         /// txtSenha control.
         /// </summary>
         /// <remarks>
@@ -58,6 +85,15 @@ namespace SempreBela
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSenha;
+
+        /// <summary>
+        /// regexSenha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexSenha;
 
         /// <summary>
         /// txtRua control.
@@ -69,6 +105,15 @@ namespace SempreBela
         protected global::System.Web.UI.WebControls.TextBox txtRua;
 
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
+        /// <summary>
         /// txtNumero control.
         /// </summary>
         /// <remarks>
@@ -76,6 +121,15 @@ namespace SempreBela
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumero;
+
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
         /// txtComplemento control.
@@ -96,6 +150,15 @@ namespace SempreBela
         protected global::System.Web.UI.WebControls.TextBox txtBairro;
 
         /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+
+        /// <summary>
         /// txtCep control.
         /// </summary>
         /// <remarks>
@@ -103,6 +166,15 @@ namespace SempreBela
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCep;
+
+        /// <summary>
+        /// regexCEP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexCEP;
 
         /// <summary>
         /// txtCidade control.
@@ -114,6 +186,15 @@ namespace SempreBela
         protected global::System.Web.UI.WebControls.TextBox txtCidade;
 
         /// <summary>
+        /// RequiredFieldValidator4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+
+        /// <summary>
         /// txtEstado control.
         /// </summary>
         /// <remarks>
@@ -121,6 +202,15 @@ namespace SempreBela
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEstado;
+
+        /// <summary>
+        /// regexEstado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexEstado;
 
         /// <summary>
         /// rbCliente control.

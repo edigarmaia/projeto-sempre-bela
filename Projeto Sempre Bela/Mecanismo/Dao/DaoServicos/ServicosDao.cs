@@ -73,14 +73,9 @@ namespace Mecanismo.Dao.DaoServicos
         {
             List<Servico> servicos = new List<Servico>();
 
-
-            //string comandoSql = "SELECT IdServico,  TipoServico + '-' + CAST(ValorServico AS VARCHAR(15)) As TipoServico FROM servicos WHERE idManicure = @idUsuario";
-            //string comandoSql = "SELECT idServico, tipoServico + ' - ' + CAST(valorServico AS VARCHAR(15)) As tipoServico, valorServico FROM servicos WHERE idManicure = @idUsuario";
-            //string comandoSql = "SELECT idServico, tipoServico + ' - ' + CAST(valorServico AS VARCHAR(15)) As tipoServico, valorServico FROM servicos WHERE idManicure = @idUsuario";
-            string comandoSql = "SELECT idServico, tipoServico + ' - R$ ' + FORMAT(valorServico, 'N2') AS tipoServico, valorServico FROM servicos WHERE idManicure = @idUsuario";
-
-
             //string comandoSql = "SELECT idServico, tipoServico, valorServico FROM servicos WHERE idManicure = @idUsuario";
+
+            string comandoSql = "SELECT idServico, tipoServico + ' - R$ ' + FORMAT(valorServico, 'N2') AS tipoServico, valorServico FROM servicos WHERE idManicure = @idUsuario";
             SqlCommand comando = new SqlCommand(comandoSql, Conexao.GetConexao());
 
             SqlParameter idManicure = new SqlParameter("@idUsuario", System.Data.SqlDbType.Int);
@@ -106,7 +101,7 @@ namespace Mecanismo.Dao.DaoServicos
             return servicos;
         }
 
-        
+
         // Metodo que busca um serviço
         public int BuscarIdServico(string tipo)
         {
@@ -143,10 +138,10 @@ namespace Mecanismo.Dao.DaoServicos
             }
 
             return 0;
-        } 
-        
-        
-        // Metodo que edita ums serviço
+        }
+
+
+        // Metodo que edita um serviço pelo id
         public static bool EditarServico(int id, string nome, decimal valor)
         {
             bool resultado = false;
@@ -154,7 +149,7 @@ namespace Mecanismo.Dao.DaoServicos
             try
             {
                 int retorno;
-                string comandoSql = "UPDATE servicos SET tipoServico = @tipo, valorServico = @valor WHERE idServico LIKE @id";
+                string comandoSql = "UPDATE servicos SET tipoServico = @tipo, valorServico = @valor WHERE idServico = @id";
 
                 SqlCommand comando = new SqlCommand(comandoSql, Conexao.GetConexao());
 
@@ -228,7 +223,6 @@ namespace Mecanismo.Dao.DaoServicos
 
             return resultado;
         }
-
-
     }
+
 }

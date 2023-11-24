@@ -16,30 +16,30 @@
 //</script>
 
 
-// Pegar o id
-function capturarValorIdAgendamento(elementoBotao) {
-    var linha = elementoBotao.parentNode.parentNode;
-    var tdIdAgendamento = linha.querySelector("#tdIdAgendamento");
-    var valorIdAgendamento = tdIdAgendamento.innerText;
+//// Pegar o id
+//function capturarValorIdAgendamento(elementoBotao) {
+//    var linha = elementoBotao.parentNode.parentNode;
+//    var tdIdAgendamento = linha.querySelector("#tdIdAgendamento");
+//    var valorIdAgendamento = tdIdAgendamento.innerText;
 
-    console.log("Valor do IdAgendamento: ", valorIdAgendamento);
+//    console.log("Valor do IdAgendamento: ", valorIdAgendamento);
 
-    document.getElementById('<%= idAgendamentoHiddenField.ClientID %>').value = valorIdAgendamento;
+//    document.getElementById('<%= idAgendamentoHiddenField.ClientID %>').value = valorIdAgendamento;
 
 
-    $.ajax({
-        type: 'POST', // ou 'GET' dependendo da sua configuração no servidor
-        url: '/perfil.aspx/ExcluirAgendamento',
-        data: { id: valorIdAgendamento },
-        success: function (response) {
-            console.log(response)
-            // Lógica para lidar com a resposta do servidor (se necessário)
-        },
-        error: function (error) {
-            console.log(error)
-            // Lidar com erros, se houver
-        }
-    });
+//    $.ajax({
+//        type: 'POST', // ou 'GET' dependendo da sua configuração no servidor
+//        url: '/perfil.aspx/ExcluirAgendamento',
+//        data: { id: valorIdAgendamento },
+//        success: function (response) {
+//            console.log(response)
+//            // Lógica para lidar com a resposta do servidor (se necessário)
+//        },
+//        error: function (error) {
+//            console.log(error)
+//            // Lidar com erros, se houver
+//        }
+//    });
 
 
     //fetch('/AgendamentoDao/ExcluirAgendamento?id=' + valorIdAgendamento, {
