@@ -175,8 +175,6 @@ namespace SempreBela
             try
             {
                 string tipo = txtNomeServico.Text.Trim();
-
-
                 // Realiza a exclusão
                 ServicosDao.ExcluirServico(tipo);
                 MsgExcluido();
@@ -211,84 +209,10 @@ namespace SempreBela
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
 
-            //// Obtém o botão clicado que acionou o evento
-            //Button btnCancelar = (Button)sender;
-
-            //// Obtém o CommandArgument que contém o ID do agendamento a ser cancelado
-            //string idAgendamento = btnCancelar.CommandArgument;
-            ////btnCancelar.CommandArgument = Agendamento.idAgendamento.ToString(); // Defina o ID do agendamento como CommandArgument
-
-
-            //AgendamentoDao.ExcluirAgendamento(Convert.ToInt32(idAgendamento));
-
-            ////btnCancelar.OnClientClick = $"return confirmarExclusao('{idAgendamento}')";
-            //Response.Redirect("perfil.aspx");
-
-            // METODO 2
-            //Button btnCancelar = (Button)sender;
-            //string idAgendamento = btnCancelar.CommandArgument;
-
-            //if (!string.IsNullOrEmpty(idAgendamento))
-            //{
-            //    try
-            //    {
-            //        int id = Convert.ToInt32(idAgendamento);
-            //        AgendamentoDao.ExcluirAgendamento(id);
-
-            //        // Atualize a página ou a tabela de agendamentos após a exclusão, se necessário
-            //        Response.Redirect("perfil.aspx");
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        // Trate qualquer exceção aqui
-            //        throw new Exception("Erro ao excluir" + ex);
-            //    }
-            //}
-
-            // METODO 3
-            //Agendamento agendamento = new Agendamento();
-
-            //Button btn = (Button)sender;
-            //string idAgendamento = btn.CommandArgument;
-
-
-            //int idAgendamento = Convert.ToInt32(btnCancelarAgenda.Attributes["data-agendamento-id"]);
-
-            // Obtém o ID do agendamento a partir do CommandArgument do botão
-            //int idAgendamento = Convert.ToInt32("data-agendamento-id");
-            //int idAgendamento = Convert.ToInt32(btnCancelar.CommandArgument);
-            //string idAgendamento = btnCancelar.CommandArgument;
-
-            //try
-            //{
-            //    // Chama o método ExcluirAgendamento da classe AgendamentoDao
-            //    bool excluiuComSucesso = AgendamentoDao.ExcluirAgendamento(Convert.ToInt32(idAgendamento));
-
-            //    if (excluiuComSucesso)
-            //    {
-            //        // Se a exclusão foi bem-sucedida, você pode atualizar a interface ou
-            //        // qualquer outra ação necessária ap/ós a exclusão
-            //        // AtualizarTabelaAgendamentos(); // Por exemplo, atualizar a tabela de agendamentos
-            //        Response.Redirect("perfil.aspx");
-
-            //    }
-            //    else
-            //    {
-            //        // Trate aqui caso a exclusão não tenha sido bem-sucedida
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //// Trate qualquer exceção aqui
-            //throw new Exception("Erro ao excluir" + ex);
-            //}
 
         }
 
-        protected void btnCancelarAgendamento_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
     }
     
