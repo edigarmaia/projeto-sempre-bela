@@ -218,3 +218,27 @@ footer {
     font-size: 15px;
     padding-left: 5px;
 }
+
+
+/*feedback*/
+.star {
+    width: 120px;
+    height: 16px;
+}
+
+span {
+    color: gray;
+    text-align: center;
+    width: 50%;
+    position: relative;
+    left: 08%;
+    top: -14%;
+}
+
+.feedback {
+    font-weight: bold;
+}
+
+.divider {
+    height: 20px;
+}

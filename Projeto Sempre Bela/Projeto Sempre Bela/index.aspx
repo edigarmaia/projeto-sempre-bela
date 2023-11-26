@@ -105,30 +105,77 @@
             </div>
         </div>
     </div>
-    <br>
-    <br>
-    <h3>Destaques</h3>
-    <br>
-    <div class="destaques">
+    <br/>
+    <br/>
+
+
+    <h3>Depoimentos</h3><br>
+      <div class="container">
         <div class="row">
+          
             <div class="col-sm">
-                <h5>Alongamento</h5>
-                <img src="Imagens/alonga.png"/>
+                <p>             
+                <img class="star" src="Imagens/cinco-estrelas.jpg"/><span>3 meses atrás</span>
+                <h6> 
+                    "Minha visita à <b>Sempre Bela</b> foi incrível! A Manicure <b>Sofia</b> foi extremamente habilidosa e atenciosa. Amei o resultado, saí muito satisfeita! Com certeza voltarei!"
+                </h6>
+                <h5 class="feedback">Marina Rios</h5>
+            </p>
             </div>
-            <div class="col-sm">
-                <div class="col-sm">
-                    <h5>Alongamento</h5>
-                    <img src="Imagens/alonga.png"/>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="col-sm">
-                    <h5>Alongamento</h5>
-                    <img src="Imagens/alonga.png"/>
-                </div>
-            </div>
+    
+
+
+          <div class="col-sm">
+            <p>             
+                <img class="star" src="Imagens/cinco-estrelas.jpg"><span>2 meses atrás</span>
+                <h6>"Adorei a experiência com a <b>Sempre Bela!</b> A Manicure <b>Laura</b> foi incrível, cuidadosa e talentosa. 
+                    Agradeço pela atenção, saí muito satisfeita! Recomendo!"</h6>
+                <h5 class="feedback">Ana Santos</h5>
+          </div>
+
+
+          <div class="col-sm">
+            <p>             
+                <img class="star" src="Imagens/cinco-estrelas.jpg"><span>5 meses atrás</span>
+                <h6>"A experiência na <b>Sempre Bela!</b> foi maravilhosa! A Manicure <b>Isabela</b> foi excepcional, atenta aos detalhes e super talentosa. Saí encantada com o resultado! Voltarei em breve!"
+                </h6>
+                <h5 class="feedback">Camila Moraes</h5>
+          </div>
         </div>
-    </div>
+      </div>
+      <div class="divider"></div>
+      <div class="container">
+        <div class="row">
+          
+            <div class="col-sm">
+                <p>             
+                <img class="star" src="Imagens/cinco-estrelas.jpg"/><span>4 meses atrás</span>
+                <h6> 
+                    "Adorei minha ida à <b>Sempre Bela!</b>! A Manicure <b>Julia</b> foi fantástica, demonstrou grande habilidade e cuidado. Saí muito feliz com o resultado! Com certeza, recomendarei!"
+                </h6>
+                <h5 class="feedback">Gabriela Torres</h5>
+            </p>
+            </div>
+
+
+
+          <div class="col-sm">
+            <p>             
+                <img class="star" src="Imagens/cinco-estrelas.jpg"><span>2 meses atrás</span>
+                <h6>"Minha visita à <b>Sempre Bela!</b> foi ótima! A Manicure <b>Carla</b> foi incrível, atenciosa e habilidosa. Adorei o resultado, saí muito satisfeita!<br> Com certeza, voltarei em breve!" <br>
+                <h5 class="feedback">Beatriz Lima</h5>
+          </div>
+
+
+          <div class="col-sm">
+            <p>             
+                <img class="star" src="Imagens/cinco-estrelas.jpg"><span>3 meses atrás</span>
+                <h6>"Uma experiência maravilhosa na <b>Sempre Bela!</b>! A Manicure <b>Ana</b> foi incrível, atenciosa e muito habilidosa. Saí encantada com o resultado! Recomendo com certeza!"
+                </h6>
+                <h5 class="feedback">Juliana Carvalho</h5>
+          </div>
+        </div>
+      </div>
 
 
     <br />

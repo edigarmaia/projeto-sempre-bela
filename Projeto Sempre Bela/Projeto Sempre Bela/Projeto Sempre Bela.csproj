@@ -137,6 +137,7 @@
     <Content Include="Global.asax" />
     <Content Include="Imagens\alonga.png" />
     <Content Include="Imagens\banho_acrilico.png" />
+    <Content Include="Imagens\cinco-estrelas.jpg" />
     <Content Include="Imagens\fibra_vidro.png" />
     <Content Include="Imagens\logo_sempre_bela.jpeg" />
     <Content Include="Imagens\manicures.jpg" />

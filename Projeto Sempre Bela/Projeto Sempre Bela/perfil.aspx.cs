@@ -212,8 +212,10 @@ namespace SempreBela
 
         }
 
-      
+        protected void btnCancelarAgendamento_Click(object sender, EventArgs e)
+        {
 
+        }
     }
     
 }
