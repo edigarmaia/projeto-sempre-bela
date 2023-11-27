@@ -8,23 +8,19 @@
     width: 900px;
     height: 160px;
     text-decoration: none;
-   /* font-style: bold;*/
-    /*border: 2px solid red;*/
+
 }
 
 .itens-menu {
     display: inline-flex;
-   /* float: center;*/
     margin-top: 50px;
-    /*
-    margin-top: -100px;*/
+  
 }
 
     .itens-menu li {
         padding: 10px;
         list-style-type: none;
         color: black;
-        /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
         font-size: 17px;
     }
 
@@ -40,27 +36,15 @@
 
     .menu a:visited {
         color: black;
-        /*
-    list-style-type: none;*/
+        
     }
 
     .menu a:hover {
-        /*color: rgb(238, 42, 245);*/
         color: #FF5FBF;
         font-size: 18px;
         font-weight: bold;
     }
-/*
-.main {
-    display: block;
-    width: 900px;
-    height: auto;
-}
-.main img {
-    margin: 0px;
-    width: 425px;
-    height: 340px;
-}*/
+
 h3 {
     text-align: center;
     background-color: #FF5FBF;
@@ -95,11 +79,6 @@ p {
 }   
 
 
-/*.main.cards{
-    width: 900px;
-    height: auto;
-    text-align: center;
-}*/
 
 .destaques {
     width: 900px;
@@ -123,7 +102,7 @@ footer p {
     font-size: 16px;
     text-align: center;
     padding: 30px;
-    font-style: bold;
+    /*font-weight: bold;*/
 }
 
 
@@ -146,7 +125,6 @@ footer {
     box-shadow: -1px 3px 5px 5px rgba(0, 0, 0, 0.25);
     margin-bottom: 50px;
     color: #2b344b;
-    /*background-color: red;*/
 }
     #form .item {
         position: relative;
@@ -223,7 +201,7 @@ footer {
 /*feedback*/
 .star {
     width: 120px;
-    height: 16px;
+    height: 20px;
 }
 
 span {
@@ -234,8 +212,14 @@ span {
     left: 08%;
     top: -14%;
 }
+.feed {
+    width: 80%;
+/*    float: left;*/
+}
 
 .feedback {
+    width: 80%;
+    text-align: right;
     font-weight: bold;
 }
 
