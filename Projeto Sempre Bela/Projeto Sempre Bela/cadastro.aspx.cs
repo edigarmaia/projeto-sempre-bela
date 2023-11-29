@@ -125,6 +125,8 @@ namespace SempreBela
 
         private void RealizarBuscaCep(string cep)
         {
+            lblCep.InnerText = "";
+
             CepsDao cepsDao = new CepsDao();
             Ceps cepData = cepsDao.BuscarCep(cep);
 
@@ -138,8 +140,8 @@ namespace SempreBela
             }
             else
             {
-                //txtCidade.Text = "CEP não encontrado.";
-                txtCidade.Text = "CEP não encontrado.";
+                lblCep.InnerText = "CEP não encontrado.";
+                txtCidade.Text = "";
                 txtRua.Text = "";
                 txtBairro.Text = "";
                 txtEstado.Text = "";
@@ -149,12 +151,12 @@ namespace SempreBela
 
         protected void txtCep_TextChanged(object sender, EventArgs e)
         {
-
             string cep = txtCep.Text;
 
             if (string.IsNullOrWhiteSpace(cep))
             {
                 // Caso o campo esteja vazio ou contenha apenas espaços em branco, retorne sem fazer nada.
+                txtCep.Text = "Digite o Cep do endereço!";
                 return;
             }
 

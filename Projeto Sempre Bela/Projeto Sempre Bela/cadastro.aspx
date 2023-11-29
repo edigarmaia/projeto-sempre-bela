@@ -110,10 +110,11 @@
 
                     <div class="form-group">
                         <label for="">CEP</label>
-                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtCep" runat="server" AutoPostBack="true" OnTextChanged="txtCep_TextChanged"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="regexCEP" runat="server" ControlToValidate="txtCep" ErrorMessage="CEP inválido. Use o formato 00000-000."
+                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtCep" runat="server" Required="true" AutoPostBack="true" OnTextChanged="txtCep_TextChanged"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="regexCEP" runat="server" ControlToValidate="txtCep"
                             ValidationExpression="^\d{5}-\d{3}$">
                         </asp:RegularExpressionValidator>
+                        <label id="lblCep" runat="server"></label>
                     </div>
                     <script>
                         $(document).ready(function () {
@@ -133,7 +134,7 @@
 
                     <div class="form-group">
                         <label for="">Número</label>
-                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtNumero" runat="server"></asp:TextBox>
+                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtNumero" Required="true" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtNumero"
                             ErrorMessage="O número é obrigatório." Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>

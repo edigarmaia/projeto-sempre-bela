@@ -125,7 +125,7 @@ namespace SempreBela
             limparDados();
         }
 
-        // Editar serviço
+        // Editar serviço pelo id
         protected void btnEditar_Click(object sender, EventArgs e)
         {
             //try
@@ -217,8 +217,9 @@ namespace SempreBela
 
         protected void btnLimpar_Click(object sender, EventArgs e)
         {
-            txtNomeServico.Text = "";
-            txtValorServico.Text = "";
+            //txtNomeServico.Text = "";
+            //txtValorServico.Text = "";
+            limparDados();
         }
     }
 

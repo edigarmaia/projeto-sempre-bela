@@ -1,5 +1,6 @@
 CREATE DATABASE bd_agencia;
 USE bd_agencia;
+-- DROP DATABASE bd_agencia;
 
 CREATE TABLE [dbo].[tipoUsuarios](
 	[idTipoUsuario] INT NOT NULL,
@@ -68,3 +69,7 @@ SELECT * FROM servicos;
 SELECT * FROM agendamento;
 SELECT * FROM enderecos;
 
+DELETE FROM agendamento;
+DELETE FROM enderecos;
+DELETE FROM servicos;
+DELETE FROM usuarios;
