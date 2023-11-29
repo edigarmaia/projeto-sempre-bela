@@ -28,7 +28,7 @@
         }
 
     </script>
-    </head>
+</head>
 
 <body>
 
@@ -79,9 +79,10 @@
                             <th scope="col">Data</th>
                             <th scope="col">Hora</th>
                             <th scope="col">Valor</th>
+                            <th scope="col">Ações</th>
                         </tr>
                     </thead>
-                    <tbody>
+             <tbody>
                         <%-- Utilizando foreach para mapear os serviços. Variável "Agendamentos" é fornecida de forma global diretamente do arquivo perfil.aspx.cs--%>
                         <% foreach (var agendamento in Agendamentos)
                             {%>
@@ -101,14 +102,14 @@
                             <%-- Utilizando CultureInfo para converter um tipo de dado a cultura de uma linguagem específica. 
                                     No caso, está convertendo o valor decimal de origem norte-americana (com .) para o padrão pt-BR (com ,) nas casas decimais --%>
                             <td>R$ <%=agendamento.Servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"))%></td>
-
-
+                             
                             <td>
                                 <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" OnClick="btnCancelarAgendamento_Click" /></td>
 
                         </tr>
                         <% } %>
                     </tbody>
+
                 </table>
                 <hr />
 
@@ -124,37 +125,36 @@
                     <h5>Serviços Oferecidos</h5>
 
                     <p>
-                        <asp:ListBox ID="lbxServicos" runat="server" Width="400px" AutoPostBack="true" OnSelectedIndexChanged="lbxServicos_SelectedIndexChanged"></asp:ListBox>
+                        <asp:ListBox ID="lbxServicos" runat="server" Width="400px" Height="100px" AutoPostBack="true" OnSelectedIndexChanged="lbxServicos_SelectedIndexChanged"></asp:ListBox>
                     </p>
 
                     <p id="msgSucesso" style="color: rgb(0, 128, 0); text-align: center" visible="false" runat="server">Serviço excluído com sucesso!</p>
                     <p id="msgErro" style="color: rgb(200, 0, 0); text-align: center" visible="false" runat="server">Não é possível excluir o serviço devido a agendamentos associados!</p>
 
                     <div class="form-group">
-                        <%--                        testar campo id oculto--%>
-                        <%--                        <input type="hidden" id="lblIdServico" runat="server" />--%>
-<%--                        <asp:Label ID="lblIdServico" runat="server" Text="ID"></asp:Label>--%>
-
-<%--                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtIdServico" runat="server"></asp:TextBox>--%>
+                        <%--<label >Código</label>--%>
+                        <asp:Textbox type="text" Visible="false" ID="txtIdServico" runat="server"></asp:Textbox>
+                        </div>
+                        
+                    <div class="form-group">
                         <label for="">Nome Serviço</label>
                         <asp:TextBox type="text" class="form-control form-control-sm" ID="txtNomeServico" runat="server" placeholder="manicure"></asp:TextBox>
-                        <%--<asp:RequiredFieldValidator ID="rfvNomeServico" runat="server" ControlToValidate="txtNomeServico"
-                            ErrorMessage="O nome do serviço é obrigatório." Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-                        --%>
+                       
                     </div>
                     <div class="form-group">
                         <label for="">Valor</label>
                         <asp:TextBox type="text" class="form-control form-control-sm" ID="txtValorServico" runat="server" placeholder="00,00"></asp:TextBox>
-                        <%--<asp:RequiredFieldValidator ID="rfvValorServico" runat="server" ControlToValidate="txtValorServico"
-   ErrorMessage="O valor do serviço é obrigatório." Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>--%>
+                       
                     </div>
 
 
                     <br />
-                    <div>
-                        <asp:Button ID="btnInserir" runat="server" Text="Inserir" class="btn btn-lg btn-success" OnClick="btnInserir_Click" />
-                        <asp:Button ID="btnEditar" runat="server" Text="Editar" class="btn btn-lg btn-primary" OnClick="btnEditar_Click" />
-                        <asp:Button ID="btnExcluir" runat="server" Text="Excluir" class="btn btn-lg btn-danger" OnClick="btnExcluir_Click"
+                    <div> 
+                       
+                        <asp:Button ID="btnLimpar" runat="server" Text="Limpar" class="btn btn-lg btn-outline-secondary" OnClick="btnLimpar_Click"/>
+                        <asp:Button ID="btnInserir" runat="server" Text="Inserir" class="btn btn-lg btn-outline-success" OnClick="btnInserir_Click" />
+                        <asp:Button ID="btnEditar" runat="server" Text="Editar" class="btn btn-lg btn-outline-primary" OnClick="btnEditar_Click" />
+                        <asp:Button ID="btnExcluir" runat="server" Text="Excluir" class="btn btn-lg btn-outline-danger" OnClick="btnExcluir_Click"
                             OnClientClick=" return confirmarExclusao();" />
 
                         <div />

@@ -138,6 +138,7 @@ namespace SempreBela
             }
             else
             {
+                //txtCidade.Text = "CEP não encontrado.";
                 txtCidade.Text = "CEP não encontrado.";
                 txtRua.Text = "";
                 txtBairro.Text = "";

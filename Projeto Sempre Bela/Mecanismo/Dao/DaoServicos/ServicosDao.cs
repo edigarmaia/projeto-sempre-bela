@@ -69,6 +69,7 @@ namespace Mecanismo.Dao.DaoServicos
             return servicos;
         }
 
+        // listar serviços por manicure, trazendo junto o valor do serviço
         public static List<Servico> ListarServicosPorManicure(int idUsuario)
         {
             List<Servico> servicos = new List<Servico>();
@@ -100,47 +101,41 @@ namespace Mecanismo.Dao.DaoServicos
 
             return servicos;
         }
-
-
-        // Metodo que busca um serviço
-        public int BuscarIdServico(string tipo)
+        
+        // Listar serviços por manicure sem o valor
+        public static List<Servico> ListarServicosManicureSemPreco(int idUsuario)
         {
-            //Servico servico = null;
+            List<Servico> servicos = new List<Servico>();
+            string comandoSql = "SELECT idServico, tipoServico, valorServico FROM servicos WHERE idManicure = @idUsuario";
 
-            // Criação do comando da consulta
-            String comandoSql = "SELECT idServico FROM servicos WHERE tipoServico LIKE @tipo";
-
-            //String comandoSql = "SELECT id FROM servicos WHERE tipoServico = @tipo AND valorServico = @valor";
             SqlCommand comando = new SqlCommand(comandoSql, Conexao.GetConexao());
 
-            // Criação do parâmetro do comando de consulta
-            SqlParameter tipoServico = new SqlParameter("@tipo", System.Data.SqlDbType.Text, 25);
-            //SqlParameter valorServico = new SqlParameter("@valor", System.Data.SqlDbType.Float);
+            SqlParameter idManicure = new SqlParameter("@idUsuario", System.Data.SqlDbType.Int);
+
 
             // Atribuição dos valores aos parâmetros do comando SQL
-            tipoServico.Value = tipo;
-            //valorServico.Value = valor;
+            idManicure.Value = idUsuario;
 
-            // Atribuição do parâmetro ao comando SQL
-            comando.Parameters.Add(tipoServico);
-            //comando.Parameters.Add(valorServico);
+            // Adição dos parâmetros ao comando SQL
+            comando.Parameters.Add(idManicure);
 
-            // Compilação e execução do comando
+            // Compila a instrução e a submete ao banco de dados
             comando.Prepare();
-            /*SqlDataReader leitor = comando.ExecuteReader();*/
-            object resultado = comando.ExecuteScalar();
+            SqlDataReader leitor = comando.ExecuteReader();
 
+            // Recupera os dados retornados pelo banco de dados
+            while (leitor.Read())
+                servicos.Add(Servico.MapServico(leitor));
 
-            // Lendo o resultado, se houver
-            if (resultado != null)
-            {
-                return Convert.ToInt32(resultado);
-            }
+            leitor.Close();
+            comando.Dispose();
 
-            return 0;
+            return servicos;
+
         }
 
 
+     
         // Metodo que edita um serviço pelo id
         public static bool EditarServico(int id, string nome, decimal valor)
         {
@@ -186,27 +181,27 @@ namespace Mecanismo.Dao.DaoServicos
             return resultado;
         }
 
-        // Metodo que exclui um servico
-        public static bool ExcluirServico(string tipo)
+        // Metodo que exclui um servico pelo id
+        public static bool ExcluirServico(int id)
         {
             bool resultado = false;
 
             try
             {
                 // Comando SQL
-                string comandoSql = "DELETE FROM servicos WHERE tipoServico LIKE @tipo";
+                string comandoSql = "DELETE FROM servicos WHERE idServico = @id";
 
                 using (SqlConnection conexao = Conexao.GetConexao())
                 using (SqlCommand comando = new SqlCommand(comandoSql, conexao))
                 {
                     // Configuração dos parâmetros do comando SQL
-                    SqlParameter tipoServico = new SqlParameter("@tipo", System.Data.SqlDbType.Text, 25);
+                    SqlParameter idServico = new SqlParameter("@id", System.Data.SqlDbType.Int);
 
                     // Atribuição dos valores aos parâmetros do comando SQL
-                    tipoServico.Value = tipo;
+                    idServico.Value = id;
 
                     // Adição dos parâmetros ao comando SQL
-                    comando.Parameters.Add(tipoServico);
+                    comando.Parameters.Add(idServico);
 
                     // Executa o comando e obtém o número de linhas afetadas
                     int retorno = comando.ExecuteNonQuery();

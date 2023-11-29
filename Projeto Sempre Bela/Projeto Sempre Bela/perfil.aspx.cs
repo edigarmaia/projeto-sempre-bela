@@ -57,22 +57,21 @@ namespace SempreBela
 
         protected void lbxServicos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Obtém o índice do item selecionado no ListBox
             int selectedIndex = lbxServicos.SelectedIndex;
 
             if (selectedIndex >= 0)
             {
-                // Obtém o item selecionado
-                ListItem selectedItem = lbxServicos.Items[selectedIndex];
+                // Obtém o serviço selecionado na ListBox
+                //Servico servicoSelecionado = ServicosDao.ListarServicosPorManicure(IdUsuario)[selectedIndex];
+                Servico servicoSelecionado = ServicosDao.ListarServicosManicureSemPreco(IdUsuario)[selectedIndex];
 
-                // Define o nome do serviço no TextBox txtNome
-                txtNomeServico.Text = selectedItem.Text;
-
-                // Define o valor do serviço no TextBox txtValor
-                txtValorServico.Text = selectedItem.Value;
+                // Preenche os campos com os valores do serviço selecionado
+                txtNomeServico.Text = servicoSelecionado.TipoServico;
+                txtValorServico.Text = servicoSelecionado.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"));
+                txtIdServico.Text = servicoSelecionado.IdServico.ToString(); // ou outro campo de identificação, se necessário
             }
-
         }
+
 
 
 
@@ -84,6 +83,7 @@ namespace SempreBela
 
         private Servico servicoForm()
         {
+            
             string nome = txtNomeServico.Text;
             decimal valor = Convert.ToDecimal(txtValorServico.Text);
 
@@ -96,13 +96,13 @@ namespace SempreBela
         }
 
 
-
-        // Após inserir um novo serviço com sucesso, esta função para atualiza o ListBox
         // Após inserir um novo serviço com sucesso, esta função para atualiza o ListBox
         private void AtualizarListBox()
         {
             // Obtenha a lista de serviços atualizada
-            List<Servico> servicos = ServicosDao.ListarServicosPorManicure(IdUsuario);
+            //List<Servico> servicos = ServicosDao.ListarServicosPorManicure(IdUsuario);
+            List<Servico> servicos = ServicosDao.ListarServicosManicureSemPreco(IdUsuario);
+
 
             // Limpe o ListBox
             lbxServicos.Items.Clear();
@@ -136,8 +136,7 @@ namespace SempreBela
             decimal valorServico = Convert.ToDecimal(txtValorServico.Text.Trim());
 
             //Buscar o Id do servico
-            int idServico = servicosDao.BuscarIdServico(nomeServico);
-
+            int idServico = Convert.ToInt32(txtIdServico.Text);
             if (idServico > 0)
             {
                 // Atualizar o serviço usando o ID
@@ -173,9 +172,9 @@ namespace SempreBela
 
             try
             {
-                string tipo = txtNomeServico.Text.Trim();
+                int idServico = Convert.ToInt32(txtIdServico.Text.Trim());
                 // Realiza a exclusão
-                ServicosDao.ExcluirServico(tipo);
+                ServicosDao.ExcluirServico(idServico);
                 MsgExcluido();
                 AtualizarListBox();
                 limparDados();
@@ -215,6 +214,12 @@ namespace SempreBela
         {
 
         }
+
+        protected void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtNomeServico.Text = "";
+            txtValorServico.Text = "";
+        }
     }
-    
+
 }
