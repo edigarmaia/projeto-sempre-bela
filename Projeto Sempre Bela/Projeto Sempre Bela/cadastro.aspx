@@ -56,7 +56,8 @@
                         <asp:TextBox type="text" class="form-control form-control-sm" ID="txtNome" runat="server" Required="true" ToolTip="O campo nome é obrigatório."></asp:TextBox>
                         <%--<asp:RequiredFieldValidator ID="rfvNome" runat="server" ControlToValidate="txtNome"
                             ErrorMessage="O campo nome é obrigatório." Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-                    --%></div>
+                        --%>
+                    </div>
                     <div class="form-group">
 
                         <label for="inputPhone">Telefone</label>
@@ -84,7 +85,7 @@
                         <script>
                             $(document).ready(function () {
                                 $('#<%= txtCpf.ClientID %>').mask('000.000.000-00');
-                    });
+                            });
                         </script>
                     </div>
 
@@ -104,9 +105,28 @@
                         </asp:RegularExpressionValidator>
                     </div>
 
+
+                    <%--CEP--%>
+
+                    <div class="form-group">
+                        <label for="">CEP</label>
+                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtCep" runat="server" AutoPostBack="true" OnTextChanged="txtCep_TextChanged"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="regexCEP" runat="server" ControlToValidate="txtCep" ErrorMessage="CEP inválido. Use o formato 00000-000."
+                            ValidationExpression="^\d{5}-\d{3}$">
+                        </asp:RegularExpressionValidator>
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            $('#<%= txtCep.ClientID %>').mask('00000-000');
+        });
+                    </script>
+
+
+
+
                     <div class="form-group">
                         <label for="">Rua</label>
-                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtRua" runat="server"></asp:TextBox>
+                        <asp:TextBox type="text" ReadOnly="true" class="form-control form-control-sm" ID="txtRua" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtRua"
                             ErrorMessage="O nome da rua é obrigatório." Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
@@ -124,13 +144,13 @@
                     </div>
                     <div class="form-group">
                         <label for="">Bairro</label>
-                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtBairro" runat="server"></asp:TextBox>
+                        <asp:TextBox type="text" ReadOnly="true" class="form-control form-control-sm" ID="txtBairro" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtBairro"
                             ErrorMessage="O nome do bairro é obrigatório." Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
-                    <div class="form-group">
+                    <%--  <div class="form-group">
                         <label for="">CEP</label>
-                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtCep" runat="server"></asp:TextBox>
+                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtCep" runat="server" AutoPostBack="true" OnTextChanged="txtCep_TextChanged"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="regexCEP" runat="server" ControlToValidate="txtCep" ErrorMessage="CEP inválido. Use o formato 00000-000."
                             ValidationExpression="^\d{5}-\d{3}$">
                         </asp:RegularExpressionValidator>
@@ -139,18 +159,18 @@
                         $(document).ready(function () {
                             $('#<%= txtCep.ClientID %>').mask('00000-000');
                 });
-                    </script>
+                    </script>--%>
 
                     <div class="form-group">
                         <label for="">Cidade</label>
-                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtCidade" runat="server"></asp:TextBox>
+                        <asp:TextBox type="text" ReadOnly="true" class="form-control form-control-sm" ID="txtCidade" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtCidade"
                             ErrorMessage="O nome da cidade é obrigatório." Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
 
                     <div class="form-group">
                         <label for="">Estado</label>
-                        <asp:TextBox type="text" class="form-control form-control-sm" ID="txtEstado" runat="server"></asp:TextBox>
+                        <asp:TextBox type="text" ReadOnly="true" class="form-control form-control-sm" ID="txtEstado" runat="server"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="regexEstado" runat="server" ControlToValidate="txtEstado" ErrorMessage="Informe um estado válido usando duas letras (ex: SP, RJ, MG)."
                             ValidationExpression="^[A-Za-z]{2}$">
 
@@ -173,15 +193,14 @@
                     <br />
                 </form>
             </div>
-    </div>
+        </div>
 
 
 
 
-    <%--Rodape--%>
-    <footer>
-        <p>&copy2023 Sempre Bela - Todos os Direitos Reservados!</p>
-    </footer>
-
+        <%--Rodape--%>
+        <footer>
+            <p>&copy2023 Sempre Bela - Todos os Direitos Reservados!</p>
+        </footer>
 </body>
 </html>

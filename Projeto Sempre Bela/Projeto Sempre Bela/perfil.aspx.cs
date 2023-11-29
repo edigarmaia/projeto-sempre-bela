@@ -147,7 +147,6 @@ namespace SempreBela
 
 
                 // Lógica adicional após a atualização, se necessário
-
                 Response.Write("");
             }
             else

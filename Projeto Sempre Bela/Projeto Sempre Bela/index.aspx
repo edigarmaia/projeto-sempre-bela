@@ -110,7 +110,7 @@
 
 
     <h3>Depoimentos</h3><br/>
-      <div class="container">
+      <div class="depoimentos" style=" width: 900px;">
         <div class="row">
           
             <div class="col-sm">
@@ -144,7 +144,9 @@
         </div>
       </div>
       <div class="divider"></div>
-      <div class="container">
+
+
+      <div class="depoimentos" style=" width: 900px;">
         <div class="row">
           
             <div class="col-sm">

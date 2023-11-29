@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +47,8 @@
     <Compile Include="Dao\Conexao.cs" />
     <Compile Include="Dao\DaoAgendamento\Agendamento.cs" />
     <Compile Include="Dao\DaoAgendamento\AgendamentoDao.cs" />
+    <Compile Include="Dao\DaoEnderecos\Ceps.cs" />
+    <Compile Include="Dao\DaoEnderecos\CepsDao.cs" />
     <Compile Include="Dao\DaoEnderecos\Endereco.cs" />
     <Compile Include="Dao\DaoEnderecos\EnderecoDao.cs" />
     <Compile Include="Dao\DaoServicos\Servico.cs" />
@@ -53,6 +58,8 @@
     <Compile Include="Enums\TipoPerfil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

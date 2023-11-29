@@ -199,6 +199,10 @@ footer {
 
 
 /*feedback*/
+
+/*div.depoimentos{
+    width: 900px;
+}*/
 .star {
     width: 120px;
     height: 20px;
@@ -214,7 +218,6 @@ span {
 }
 .feed {
     width: 80%;
-/*    float: left;*/
 }
 
 .feedback {

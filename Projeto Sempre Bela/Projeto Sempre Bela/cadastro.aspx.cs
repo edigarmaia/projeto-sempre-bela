@@ -117,5 +117,49 @@ namespace SempreBela
             ClientScript.RegisterStartupScript(this.GetType(), "Erro E-mail", script, true);
 
         }
+
+
+
+
+        // Api via Cep
+
+        private void RealizarBuscaCep(string cep)
+        {
+            CepsDao cepsDao = new CepsDao();
+            Ceps cepData = cepsDao.BuscarCep(cep);
+
+            if (cepData != null)
+            {
+                txtRua.Text = cepData.Logradouro;
+                txtBairro.Text = cepData.Bairro;
+                txtCidade.Text = cepData.Localidade;
+                txtEstado.Text = cepData.Uf;
+                txtEstado.Text = cepData.Uf;
+            }
+            else
+            {
+                txtCidade.Text = "CEP não encontrado.";
+                txtRua.Text = "";
+                txtBairro.Text = "";
+                txtEstado.Text = "";
+                txtEstado.Text = "";
+            }
+        }
+
+        protected void txtCep_TextChanged(object sender, EventArgs e)
+        {
+
+            string cep = txtCep.Text;
+
+            if (string.IsNullOrWhiteSpace(cep))
+            {
+                // Caso o campo esteja vazio ou contenha apenas espaços em branco, retorne sem fazer nada.
+                return;
+            }
+
+            RealizarBuscaCep(cep); // Chama o método RealizarBuscaCep no evento LostFocus se o campo não estiver vazio.
+
+
+        }
     }
 }
