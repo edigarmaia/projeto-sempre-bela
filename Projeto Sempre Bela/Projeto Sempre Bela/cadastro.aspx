@@ -100,9 +100,9 @@
                     <div class="form-group">
                         <label for="inputSenha">Senha</label>
                         <asp:TextBox type="password" class="form-control form-control-sm" ID="txtSenha" runat="server" Required="true"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="regexSenha" runat="server" ControlToValidate="txtSenha" ErrorMessage="A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais."
+                        <%--<asp:RegularExpressionValidator ID="regexSenha" runat="server" ControlToValidate="txtSenha" ErrorMessage="A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais."
                             ForeColor="Red" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
-                        </asp:RegularExpressionValidator>
+                        </asp:RegularExpressionValidator>--%>
                     </div>
 
 

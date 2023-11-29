@@ -68,7 +68,7 @@ namespace SempreBela
                 // Preenche os campos com os valores do serviço selecionado
                 txtNomeServico.Text = servicoSelecionado.TipoServico;
                 txtValorServico.Text = servicoSelecionado.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"));
-                txtIdServico.Text = servicoSelecionado.IdServico.ToString(); // ou outro campo de identificação, se necessário
+                txtIdServico.Text = servicoSelecionado.IdServico.ToString();
             }
         }
 
@@ -204,10 +204,14 @@ namespace SempreBela
 
 
         // Excluir um agendamento
-        protected void btnCancelar_Click(object sender, EventArgs e)
+        protected void btnExcluirAgendamento_Click(object sender, EventArgs e)
         {
 
-
+            //inicio pegar id
+            Button btn = (Button)sender;
+            var arg = btn.CommandArgument;
+            int idAgendamento = int.Parse(arg.ToString());
+            Console.WriteLine(idAgendamento);
         }
 
         protected void btnCancelarAgendamento_Click(object sender, EventArgs e)

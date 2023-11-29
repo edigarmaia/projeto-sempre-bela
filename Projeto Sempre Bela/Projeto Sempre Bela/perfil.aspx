@@ -82,32 +82,63 @@
                             <th scope="col">Ações</th>
                         </tr>
                     </thead>
-             <tbody>
-                        <%-- Utilizando foreach para mapear os serviços. Variável "Agendamentos" é fornecida de forma global diretamente do arquivo perfil.aspx.cs--%>
-                        <% foreach (var agendamento in Agendamentos)
-                            {%>
-                        <tr>
-                            <td>
+                    <tbody>
+                     <%--   <%-- Utilizando foreach para mapear os serviços. Variável "Agendamentos" é fornecida de forma global diretamente do arquivo perfil.aspx.cs--%>
+<%--                        <% foreach (var agendamento in Agendamentos)--%>
+<%--                            {%>--%>
+                     <%--   <tr>
+                            <td>--%>
                                 <%-- Operação ternária para identificar se na tabela deve ser exibida o nome da manicure ou do cliente --%>
 
-                                <%=Tipo == Mecanismo.Enums.TipoPerfil.Cliente ?
+<%--                                <%=Tipo == Mecanismo.Enums.TipoPerfil.Cliente ?
                                           agendamento.Manicure.Nome : agendamento.Cliente.Nome 
-                                    %>
-                                </td>
+                                %>--%>
+                           <%-- </td>
 
                             <%--<td id="tdIdAgendamento" runat="server" style="display:none" data-id="tdIdAgendamento">Id</td>--%>
-                            <td><%=agendamento.Servico.TipoServico%></td>
+                           <%-- <td><%=agendamento.Servico.TipoServico%></td>
                             <td><%=agendamento.DataAgendamento.ToShortDateString()%></td>
-                            <td><%=agendamento.DataAgendamento.ToString("HH:mm")%></td>
+                            <td><%=agendamento.DataAgendamento.ToString("HH:mm")%></td>--%>
                             <%-- Utilizando CultureInfo para converter um tipo de dado a cultura de uma linguagem específica. 
                                     No caso, está convertendo o valor decimal de origem norte-americana (com .) para o padrão pt-BR (com ,) nas casas decimais --%>
-                            <td>R$ <%=agendamento.Servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"))%></td>
-                             
-                            <td>
+<%--                            <td>R$ <%=agendamento.Servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"))%></td>--%>
+
+         <%--                   <td>
                                 <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" OnClick="btnCancelarAgendamento_Click" /></td>
 
-                        </tr>
-                        <% } %>
+                        </tr>--%>
+<%--                        <% } %>--%>
+
+
+                        <%--             TESTE USANDO REPEATER--%>
+                        <asp:Repeater runat="server" ID="rptAgendamentos">
+                            <ItemTemplate>
+                                <tr>
+<%--                                    teste--%>
+                                    <%-- Operação ternária para identificar se na tabela deve ser exibida o nome da manicure ou do cliente --%>
+
+                                    <%=Tipo == Mecanismo.Enums.TipoPerfil.Cliente ? SempreBela.agendamento.Manicure.Nome : agendamento.Cliente.Nome%>
+          
+
+                                    <td>
+
+                                    </td>
+                                    <td><%# DataBinder.Eval(Container.DataItem,"IdAgendamento") %></td>
+
+                                    <td><%# DataBinder.Eval(Container.DataItem,"Servico.TipoServico") %></td>
+                                    <td><%# ((SempreBela.Dao.DaoAgendamento.Agendamento)Container.DataItem).DataAgendamento.ToShortDateString() %></td>
+                                    <td><%# ((SempreBela.Dao.DaoAgendamento.Agendamento)Container.DataItem).DataAgendamento.ToString("HH:mm") %></td>
+                                    <td><%# ((SempreBela.Dao.DaoAgendamento.Agendamento)Container.DataItem).Servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR")) %></td>
+                                    <td>
+                                        <asp:Button Text="Excluir" ID="btnExcluirAgendamento" CssClass="btn btn-outline-danger" runat="server" CommandArgument='<%#Eval("IdAgendamento") %>' OnClick="btnExcluirAgendamento_Click"/>
+<%--                                        <asp:Button Text="Alterar" CssClass="btn btn-outline-success" runat="server" CommandArgument='<%#Eval("IdAgendamento") %>' OnClick="btnAlterar_Click" />--%>
+                                    </td>
+
+                                </tr>
+                            </ItemTemplate>
+                        </asp:Repeater>
+
+
                     </tbody>
 
                 </table>
@@ -132,26 +163,26 @@
                     <p id="msgErro" style="color: rgb(200, 0, 0); text-align: center" visible="false" runat="server">Não é possível excluir o serviço devido a agendamentos associados!</p>
 
                     <div class="form-group">
-                        <%--<label >Código</label>--%>
-                        <asp:Textbox type="text" Visible="false" ID="txtIdServico" runat="server"></asp:Textbox>
-                        </div>
-                        
+                   
+                        <asp:TextBox type="text" Visible="false" ID="txtIdServico" runat="server"></asp:TextBox>
+                    </div>
+
                     <div class="form-group">
                         <label for="">Nome Serviço</label>
                         <asp:TextBox type="text" class="form-control form-control-sm" ID="txtNomeServico" runat="server" placeholder="manicure"></asp:TextBox>
-                       
+
                     </div>
                     <div class="form-group">
                         <label for="">Valor</label>
                         <asp:TextBox type="text" class="form-control form-control-sm" ID="txtValorServico" runat="server" placeholder="00,00"></asp:TextBox>
-                       
+
                     </div>
 
 
                     <br />
-                    <div> 
-                       
-                        <asp:Button ID="btnLimpar" runat="server" Text="Limpar" class="btn btn-lg btn-outline-secondary" OnClick="btnLimpar_Click"/>
+                    <div>
+
+                        <asp:Button ID="btnLimpar" runat="server" Text="Limpar" class="btn btn-lg btn-outline-secondary" OnClick="btnLimpar_Click" />
                         <asp:Button ID="btnInserir" runat="server" Text="Inserir" class="btn btn-lg btn-outline-success" OnClick="btnInserir_Click" />
                         <asp:Button ID="btnEditar" runat="server" Text="Editar" class="btn btn-lg btn-outline-primary" OnClick="btnEditar_Click" />
                         <asp:Button ID="btnExcluir" runat="server" Text="Excluir" class="btn btn-lg btn-outline-danger" OnClick="btnExcluir_Click"

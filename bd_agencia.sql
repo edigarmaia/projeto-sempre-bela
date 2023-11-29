@@ -50,7 +50,7 @@ CREATE TABLE [dbo].[servicos] (
 CREATE TABLE [dbo].[agendamento] (
     [idAgendamento]    INT          IDENTITY (1, 1) NOT NULL,
     [dataAgendamento]  DATETIME     NOT NULL,
-    [localAgendamento] VARCHAR (50) NOT NULL,
+    [localAgendamento] VARCHAR (50),
     [idManicure]       INT          NOT NULL,
     [idServico]        INT          NOT NULL,
     [idCliente]        INT          NOT NULL,
