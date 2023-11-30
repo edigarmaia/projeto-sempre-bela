@@ -59,7 +59,6 @@ CREATE TABLE [dbo].[agendamento] (
     FOREIGN KEY ([idServico]) REFERENCES [dbo].[servicos] ([idServico]),
     FOREIGN KEY ([idCliente]) REFERENCES [dbo].[usuarios] ([idUsuario])
 );
-DELETE FROM agendamento WHERE idAgendamento BETWEEN 7 AND 11;
 DELETE FROM usuarios WHERE idUsuario = 12;
 DELETE FROM enderecos WHERE idEndereco = 7;
 
@@ -68,6 +67,9 @@ SELECT * FROM tipoUsuarios;
 SELECT * FROM servicos;
 SELECT * FROM agendamento;
 SELECT * FROM enderecos;
+
+DELETE FROM agendamento WHERE idAgendamento= 1;
+
 
 DELETE FROM agendamento;
 DELETE FROM enderecos;

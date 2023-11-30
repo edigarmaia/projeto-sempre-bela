@@ -28,6 +28,8 @@
         }
 
     </script>
+   
+
 </head>
 
 <body>
@@ -75,6 +77,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Nome</th>
+<%--                            <th scope="col">IdAgendamento</th>--%>
                             <th scope="col">Serviço</th>
                             <th scope="col">Data</th>
                             <th scope="col">Hora</th>
@@ -84,59 +87,40 @@
                     </thead>
                     <tbody>
                      <%--   <%-- Utilizando foreach para mapear os serviços. Variável "Agendamentos" é fornecida de forma global diretamente do arquivo perfil.aspx.cs--%>
-<%--                        <% foreach (var agendamento in Agendamentos)--%>
-<%--                            {%>--%>
-                     <%--   <tr>
-                            <td>--%>
+                        <% foreach (var agendamento in Agendamentos)
+                            {%>
+                        <tr>
+                            <td>
                                 <%-- Operação ternária para identificar se na tabela deve ser exibida o nome da manicure ou do cliente --%>
 
-<%--                                <%=Tipo == Mecanismo.Enums.TipoPerfil.Cliente ?
+                                <%=Tipo == Mecanismo.Enums.TipoPerfil.Cliente ?
                                           agendamento.Manicure.Nome : agendamento.Cliente.Nome 
-                                %>--%>
-                           <%-- </td>
+                                %>
+                            </td>
+                           <%--<td><%= agendamento.IdAgendamento %></td>--%>
 
-                            <%--<td id="tdIdAgendamento" runat="server" style="display:none" data-id="tdIdAgendamento">Id</td>--%>
-                           <%-- <td><%=agendamento.Servico.TipoServico%></td>
+<%--                            <td id="tdIdAgendamento"><%=agendamento.IdAgendamento %></td>--%>
+                            <td><%=agendamento.Servico.TipoServico%></td>
                             <td><%=agendamento.DataAgendamento.ToShortDateString()%></td>
-                            <td><%=agendamento.DataAgendamento.ToString("HH:mm")%></td>--%>
+                            <td><%=agendamento.DataAgendamento.ToString("HH:mm")%></td>
                             <%-- Utilizando CultureInfo para converter um tipo de dado a cultura de uma linguagem específica. 
                                     No caso, está convertendo o valor decimal de origem norte-americana (com .) para o padrão pt-BR (com ,) nas casas decimais --%>
-<%--                            <td>R$ <%=agendamento.Servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"))%></td>--%>
+                            <td>R$ <%=agendamento.Servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"))%></td>
 
-         <%--                   <td>
-                                <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" OnClick="btnCancelarAgendamento_Click" /></td>
+                            <td>
+                                          <asp:Button ID="btnCancelarAgendamento" runat="server" Text="Cancelar" CssClass="btn btn-outline-danger" OnClick="btnCancelarAgendamento_Click" 
+                                              CommandArgument='<%= agendamento.IdAgendamento %>' OnClientClick="return confirmarExclusaoAgendamento();"/>
 
-                        </tr>--%>
-<%--                        <% } %>--%>
+                                </td>
+                             <script type="text/javascript">
+                                 function confirmarExclusaoAgendamento() {
+                                     return confirm("Tem certeza que deseja excluir este agendamento?");
+                                 }
 
+                             </script>
 
-                        <%--             TESTE USANDO REPEATER--%>
-                        <asp:Repeater runat="server" ID="rptAgendamentos">
-                            <ItemTemplate>
-                                <tr>
-<%--                                    teste--%>
-                                    <%-- Operação ternária para identificar se na tabela deve ser exibida o nome da manicure ou do cliente --%>
-
-                                    <%=Tipo == Mecanismo.Enums.TipoPerfil.Cliente ? SempreBela.agendamento.Manicure.Nome : agendamento.Cliente.Nome%>
-          
-
-                                    <td>
-
-                                    </td>
-                                    <td><%# DataBinder.Eval(Container.DataItem,"IdAgendamento") %></td>
-
-                                    <td><%# DataBinder.Eval(Container.DataItem,"Servico.TipoServico") %></td>
-                                    <td><%# ((SempreBela.Dao.DaoAgendamento.Agendamento)Container.DataItem).DataAgendamento.ToShortDateString() %></td>
-                                    <td><%# ((SempreBela.Dao.DaoAgendamento.Agendamento)Container.DataItem).DataAgendamento.ToString("HH:mm") %></td>
-                                    <td><%# ((SempreBela.Dao.DaoAgendamento.Agendamento)Container.DataItem).Servico.ValorServico.ToString("N", System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR")) %></td>
-                                    <td>
-                                        <asp:Button Text="Excluir" ID="btnExcluirAgendamento" CssClass="btn btn-outline-danger" runat="server" CommandArgument='<%#Eval("IdAgendamento") %>' OnClick="btnExcluirAgendamento_Click"/>
-<%--                                        <asp:Button Text="Alterar" CssClass="btn btn-outline-success" runat="server" CommandArgument='<%#Eval("IdAgendamento") %>' OnClick="btnAlterar_Click" />--%>
-                                    </td>
-
-                                </tr>
-                            </ItemTemplate>
-                        </asp:Repeater>
+                        </tr>
+                        <% } %>
 
 
                     </tbody>

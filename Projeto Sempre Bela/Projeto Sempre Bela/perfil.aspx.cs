@@ -203,19 +203,42 @@ namespace SempreBela
         }
 
 
-        // Excluir um agendamento
-        protected void btnExcluirAgendamento_Click(object sender, EventArgs e)
+        //// Excluir um agendamento
+        //protected void btnExcluirAgendamento_Click(object sender, EventArgs e)
+        //{
+
+        //    //inicio pegar id
+        //    Button btn = (Button)sender;
+        //    var arg = btn.CommandArgument;
+        //    int idAgendamento = int.Parse(arg.ToString());
+        //    Console.WriteLine(idAgendamento);
+        //}
+
+        private void MsgCancelarAgenda()
         {
+            // Registrando um script do lado do cliente para exibir um alerta após o postback
+            string script = "alert('Agendamento excluído com sucesso!');";
+            ClientScript.RegisterStartupScript(this.GetType(), "MsgExcluidoAgenda", script, true);
 
-            //inicio pegar id
-            Button btn = (Button)sender;
-            var arg = btn.CommandArgument;
-            int idAgendamento = int.Parse(arg.ToString());
-            Console.WriteLine(idAgendamento);
         }
-
+      
         protected void btnCancelarAgendamento_Click(object sender, EventArgs e)
         {
+            MsgCancelarAgenda();
+            Response.Redirect("perfil.aspx");
+            //Button btn = (Button)sender;
+            //string idAgendamento = btn.CommandArgument;
+
+            //lblStatus.InnerText = idAgendamento;
+
+            ////inicio pegar id
+            //Button btn = (Button)sender;
+            //var arg = btn.CommandArgument;
+            //int idAgendamento2 = int.Parse(arg.ToString());
+            //string idAgendamento = arg.ToString();
+            //Console.WriteLine(idAgendamento2);
+            //lblStatus.InnerText = idAgendamento.ToString();
+
 
         }
 
